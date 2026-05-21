@@ -19,9 +19,17 @@ export function SpotlightTracker() {
     let frame: number | null = null;
     let lastX = 0;
     let lastY = 0;
+    // Ignore synthetic pointermove events that fire with unchanged coords during
+    // scroll — we only want the spotlight border to move when the cursor actually
+    // moves, not whenever the page shifts under a stationary pointer.
+    let prevX = -1;
+    let prevY = -1;
     const SLOP = 80; // px of cursor distance from element edge before lighting up
 
     const onMove = (e: PointerEvent) => {
+      if (e.clientX === prevX && e.clientY === prevY) return;
+      prevX = e.clientX;
+      prevY = e.clientY;
       lastX = e.clientX;
       lastY = e.clientY;
       if (frame !== null) return;

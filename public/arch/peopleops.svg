@@ -90,7 +90,7 @@
   <text x="533" y="48.5" fill="#cfd2ff" font-family="sans-serif" font-size="9.2" font-weight="700">separate auth domain from HRMS Cognito</text>
 
   <rect x="534" y="306" width="154" height="14" rx="7" fill="#141727" stroke="#424579" stroke-width="1"/>
-  <text x="546" y="316.5" fill="#9aa3b2" font-family="sans-serif" font-size="8.8">webhook updates environment state + tenant status after workflow completion</text>
+  <text x="546" y="316.5" fill="#9aa3b2" font-family="sans-serif" font-size="8.2">webhook updates env + tenant status</text>
 
   <rect x="196" y="334" width="328" height="12" rx="6" fill="#0f1116" stroke="#1d2230" stroke-width="1"/>
   <text x="206" y="343.2" fill="#7f8898" font-family="sans-serif" font-size="8.7">Attendance geofencing uses PostGIS ST_DWithin; payroll can generate S3-backed payslip PDFs and export bank files</text>

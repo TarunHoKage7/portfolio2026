@@ -95,7 +95,7 @@ img, svg { display: block; max-width: 100%; }
    ───────────────────────────────────────────────────────────── */
 
 .cursor-aura {
-  --aura-size: 260px;
+  --aura-size: 300px;
   position: fixed;
   pointer-events: none;
   z-index: 1;
