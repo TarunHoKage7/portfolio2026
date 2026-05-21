@@ -8,13 +8,13 @@ export function ProjectFacts({ project }: Props) {
   return (
     <dl className="space-y-10">
       <Row label="Problem">
-        <p className="text-tx-2 text-[14.5px] leading-relaxed max-w-[60ch]">
+        <p className="text-tx-2 text-[14.5px] leading-relaxed">
           {project.problem}
         </p>
       </Row>
 
       <Row label="What I built">
-        <ul className="space-y-2 text-tx-2 text-[14.5px] leading-relaxed list-disc pl-5 marker:text-tx-5 max-w-[60ch]">
+        <ul className="space-y-2 text-tx-2 text-[14.5px] leading-relaxed list-disc pl-5 marker:text-tx-5">
           {project.built.map((b) => <li key={b}>{b}</li>)}
         </ul>
       </Row>

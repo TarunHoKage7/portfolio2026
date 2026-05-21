@@ -52,7 +52,7 @@ export default async function ProjectDetail({ params }: PageProps) {
             </h2>
             <StatusPill status={project.status} label={project.statusLabel} />
           </div>
-          <p className="text-tx-2 text-[16.5px] leading-relaxed max-w-[62ch]">
+          <p className="text-tx-2 text-[16.5px] leading-relaxed">
             {project.intro}
           </p>
           <div className="mt-5 flex flex-wrap gap-1.5">
