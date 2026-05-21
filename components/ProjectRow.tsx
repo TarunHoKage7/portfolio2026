@@ -15,7 +15,7 @@ export function ProjectRow({ project, maxStack }: Props) {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="group grid grid-cols-[110px_1fr] gap-6 py-5 -mx-4 px-4 rounded-lg border-l-2 border-transparent hover:bg-bg-elev/70 hover:border-accent/25 transition-colors"
+      className="group grid grid-cols-[110px_1fr] gap-6 py-5 -mx-4 px-4 rounded-lg border-l-2 border-transparent hover:bg-bg-elev/70 hover:border-accent/50 transition-colors"
     >
       <div className="font-mono text-[10.5px] tracking-widest uppercase text-tx-4 pt-1">
         {project.years}

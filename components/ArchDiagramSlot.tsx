@@ -20,7 +20,7 @@ export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
             alt="Architecture diagram"
             width={720}
             height={430}
-            className="w-full h-auto block min-w-[640px] rounded-lg"
+            className="w-full h-auto block min-w-[720px] rounded-lg"
             loading="lazy"
           />
         </div>

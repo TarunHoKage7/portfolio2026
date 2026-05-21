@@ -47,7 +47,7 @@ export default function Home() {
           <div className="eyebrow mb-8">Experience</div>
           <div className="space-y-12">
             {experience.map((e) => (
-              <article key={e.company} className="grid grid-cols-[110px_1fr] gap-6 -mx-4 px-4 py-4 rounded-xl border-l-2 border-transparent hover:bg-bg-elev/50 hover:border-accent/25 transition-colors">
+              <article key={e.company} className="grid grid-cols-[110px_1fr] gap-6 -mx-4 px-4 py-4 rounded-xl border-l-2 border-transparent hover:bg-bg-elev/50 hover:border-accent/50 transition-colors">
                 <div className="font-mono text-[10.5px] tracking-widest uppercase text-tx-4 pt-1">
                   {e.when}
                 </div>
