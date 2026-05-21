@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface Props {
   caption?: string;
   stack: string[];
@@ -9,19 +11,19 @@ export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
     return (
       <div className="rounded-xl border border-line-strong bg-bg-panel [overflow:clip]">
         {/*
-         * overflow-x-auto + min-w on the img: on wide screens the diagram fills
-         * the content area; on narrow screens it scrolls rather than squishing
-         * below legibility. width/height give the browser an aspect-ratio hint
-         * before the lazy-loaded SVG arrives, preventing layout shift.
+         * The diagrams are intentionally wider than the article column. Wide
+         * screens get a full-width render; narrow screens scroll instead of
+         * crushing labels below legibility.
          */}
-        <div className="overflow-x-auto p-4">
-          <img
+        <div className="overflow-x-auto p-3 sm:p-4">
+          <Image
             src={diagramSrc}
             alt="Architecture diagram"
-            width={720}
-            height={430}
-            className="w-full h-auto block min-w-[720px] rounded-lg"
+            width={960}
+            height={560}
+            className="block h-auto w-full min-w-[760px] rounded-lg"
             loading="lazy"
+            unoptimized
           />
         </div>
         {caption && (

@@ -1,131 +1,141 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Studio Engine architecture diagram">
-  <rect x="0" y="0" width="720" height="360" fill="#08090a"/>
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Studio Engine architecture diagram">
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#8b8df0"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#67d5ff"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#6ee7b7"/>
+    </marker>
+    <style>
+      .bg { fill: #08090a; }
+      .grid { stroke: #161a23; stroke-width: 1; opacity: .5; }
+      .frame { fill: #0a0c10; stroke: #1d2330; stroke-width: 1.4; }
+      .panel { fill: #0e1117; stroke: #273044; stroke-width: 1.3; }
+      .card, .chip, .footer-chip { fill: #111620; stroke: #30384c; stroke-width: 1.1; }
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { fill: #f1f5ff; font-size: 28px; font-weight: 780; letter-spacing: 0; }
+      .subtitle { fill: #9ba6bb; font-size: 15px; }
+      .label { font-size: 13px; font-weight: 760; letter-spacing: 1.4px; text-transform: uppercase; }
+      .body { fill: #f1f5ff; font-size: 14px; }
+      .strong { font-weight: 720; }
+      .small { font-size: 12.5px; }
+      .muted { fill: #9ba6bb; font-size: 12px; }
+      .dim { fill: #727d91; font-size: 11px; }
+      .purple { fill: #8b8df0; }
+      .cyan { fill: #67d5ff; }
+      .green { fill: #6ee7b7; }
+      .amber { fill: #f7c873; }
+      .purple-fill { fill: #8b8df0; }
+      .cyan-fill { fill: #67d5ff; }
+      .green-fill { fill: #6ee7b7; }
+      .amber-fill { fill: #f7c873; }
+      .arrow { fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .purple-stroke { stroke: #8b8df0; }
+      .cyan-stroke { stroke: #67d5ff; }
+      .green-stroke { stroke: #6ee7b7; }
+    </style>
+  </defs>
 
-  <text x="24" y="24" fill="#f4f4f5" font-family="sans-serif" font-size="16" font-weight="700">Studio Engine</text>
-  <text x="24" y="41" fill="#9ca3af" font-family="sans-serif" font-size="10">Hybrid local/cloud AI production pipeline for constrained consumer hardware</text>
+  <rect width="960" height="560" class="bg"/>
+  <path d="M 40 88 V 520" class="grid"/><path d="M 104 88 V 520" class="grid"/><path d="M 168 88 V 520" class="grid"/><path d="M 232 88 V 520" class="grid"/><path d="M 296 88 V 520" class="grid"/><path d="M 360 88 V 520" class="grid"/><path d="M 424 88 V 520" class="grid"/><path d="M 488 88 V 520" class="grid"/><path d="M 552 88 V 520" class="grid"/><path d="M 616 88 V 520" class="grid"/><path d="M 680 88 V 520" class="grid"/><path d="M 744 88 V 520" class="grid"/><path d="M 808 88 V 520" class="grid"/><path d="M 872 88 V 520" class="grid"/><path d="M 936 88 V 520" class="grid"/>
+  <path d="M 32 100 H 928" class="grid"/><path d="M 32 152 H 928" class="grid"/><path d="M 32 204 H 928" class="grid"/><path d="M 32 256 H 928" class="grid"/><path d="M 32 308 H 928" class="grid"/><path d="M 32 360 H 928" class="grid"/><path d="M 32 412 H 928" class="grid"/><path d="M 32 464 H 928" class="grid"/>
+  <rect x="16" y="16" width="928" height="528" rx="28" class="frame"/>
+  <circle cx="825" cy="96" r="78" fill="#8b8df0" opacity=".055"/>
+  <circle cx="108" cy="476" r="58" fill="#6ee7b7" opacity=".045"/>
 
-  <rect x="20" y="62" width="138" height="74" rx="8" fill="#111318" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="89" y="82" fill="#f4f4f5" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">Command Center</text>
-  <text x="89" y="100" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">React + Vite dashboard</text>
-  <text x="89" y="114" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">shot prompts, review, Red Pen</text>
-  <text x="89" y="128" fill="#8b8df0" font-family="sans-serif" font-size="9" text-anchor="middle">iPad via Cloudflare Tunnel</text>
+  <text x="40" y="58" class="title" >Studio Engine</text>
+  <text x="40" y="82" class="subtitle" >Single-node AI animation pipeline with serial GPU orchestration</text>
 
-  <rect x="184" y="62" width="108" height="74" rx="8" fill="#111318" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="238" y="82" fill="#f4f4f5" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">FastAPI</text>
-  <text x="238" y="100" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">job API</text>
-  <text x="238" y="114" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">status heartbeat</text>
-  <text x="238" y="128" fill="#8b8df0" font-family="sans-serif" font-size="9" text-anchor="middle">WebSocket logs</text>
+  
+    <rect x="40" y="110" width="200" height="320" rx="22" class="panel"/>
+    <text x="64" y="146" class="label purple">Director UI</text>
+  
+      <rect x="64" y="174" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="190" r="4" class="purple-fill"/>
+      <text x="96" y="195" class="body strong small">Script JSON</text>
+      <rect x="64" y="218" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="234" r="4" class="purple-fill"/>
+      <text x="96" y="239" class="body strong small">Shot approval</text>
+      <rect x="64" y="262" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="278" r="4" class="purple-fill"/>
+      <text x="96" y="283" class="body strong small">Red Pen fixes</text>
+      <rect x="64" y="306" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="322" r="4" class="purple-fill"/>
+      <text x="96" y="327" class="body strong small">Remote tunnel</text>
 
-  <rect x="320" y="54" width="210" height="90" rx="10" fill="#0f1118" stroke="#8b8df0" stroke-width="1.4"/>
-  <text x="425" y="74" fill="#f4f4f5" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">Gemini Multi-Agent System</text>
+  
+    
+    <rect x="280" y="110" width="400" height="166" rx="22" class="panel"/>
+    <text x="304" y="146" class="label cyan">Python Orchestrator</text>
+    
+    <rect x="304" y="168" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="168" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="189" class="body strong">Watch folder</text>
+    <text x="466" y="189" class="body muted">lock, process, sort</text>
+    <rect x="304" y="206" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="206" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="227" class="body strong">Agent router</text>
+    <text x="466" y="227" class="body muted">Director, QC, Engineer</text>
+    <rect x="304" y="244" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="244" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="265" class="body strong">VRAM sentinel</text>
+    <text x="466" y="265" class="body muted">serial GPU handoff</text>
+  
+    
+    <rect x="280" y="292" width="400" height="166" rx="22" class="panel"/>
+    <text x="304" y="328" class="label green">Render Pipeline</text>
+    
+    <rect x="304" y="350" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="350" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="371" class="body strong">Blender</text>
+    <text x="466" y="371" class="body muted">depth, pose, normal maps</text>
+    <rect x="304" y="388" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="388" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="409" class="body strong">SD Forge</text>
+    <text x="466" y="409" class="body muted">ControlNet styling</text>
+    <rect x="304" y="426" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="426" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="447" class="body strong">Audio + lipsync</text>
+    <text x="466" y="447" class="body muted">RVC, Wav2Lip, FFmpeg</text>
 
-  <rect x="334" y="86" width="88" height="20" rx="5" fill="#171a25" stroke="#32394b" stroke-width="1"/>
-  <text x="378" y="97" fill="#d9dcff" font-family="sans-serif" font-size="8" text-anchor="middle" dominant-baseline="middle">Director: scene intent</text>
+  
+    <rect x="720" y="110" width="200" height="320" rx="22" class="panel"/>
+    <text x="744" y="146" class="label amber">Runtime State</text>
+  
+      <rect x="744" y="174" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="190" r="4" class="amber-fill"/>
+      <text x="776" y="195" class="body strong small">Hash cache</text>
+      <rect x="744" y="218" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="234" r="4" class="amber-fill"/>
+      <text x="776" y="239" class="body strong small">Frame QC</text>
+      <rect x="744" y="262" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="278" r="4" class="amber-fill"/>
+      <text x="776" y="283" class="body strong small">Completed shots</text>
+      <rect x="744" y="306" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="322" r="4" class="amber-fill"/>
+      <text x="776" y="327" class="body strong small">Quarantine</text>
+      <rect x="744" y="350" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="366" r="4" class="amber-fill"/>
+      <text x="776" y="371" class="body strong small">WebSocket logs</text>
 
-  <rect x="428" y="86" width="88" height="20" rx="5" fill="#171a25" stroke="#32394b" stroke-width="1"/>
-  <text x="472" y="97" fill="#d9dcff" font-family="sans-serif" font-size="8" text-anchor="middle" dominant-baseline="middle">Cine: camera/light</text>
+  <rect x="40" y="462" width="880" height="58" rx="20" class="panel"/>
+  <text x="64" y="497" class="label green" >Key signals</text>
+  
+      <rect x="184" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="256" y="496" class="dim" text-anchor="middle">Gemini agents</text>
+      <rect x="358" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="430" y="496" class="dim" text-anchor="middle">4 GB GPU budget</text>
+      <rect x="532" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="604" y="496" class="dim" text-anchor="middle">guide maps</text>
+      <rect x="706" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="778" y="491" class="dim" text-anchor="middle">shot-level review</text><text x="778" y="503" class="dim" text-anchor="middle">loop</text>
 
-  <rect x="334" y="112" width="88" height="20" rx="5" fill="#171a25" stroke="#32394b" stroke-width="1"/>
-  <text x="378" y="123" fill="#d9dcff" font-family="sans-serif" font-size="8" text-anchor="middle" dominant-baseline="middle">Engineer: assets</text>
-
-  <rect x="428" y="112" width="88" height="20" rx="5" fill="#171a25" stroke="#32394b" stroke-width="1"/>
-  <text x="472" y="123" fill="#d9dcff" font-family="sans-serif" font-size="8" text-anchor="middle" dominant-baseline="middle">QC: hallucination scan</text>
-
-  <rect x="562" y="62" width="138" height="74" rx="8" fill="#111318" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="631" y="82" fill="#f4f4f5" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">Studio Brain Output</text>
-  <text x="631" y="100" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">strict JSON manifests</text>
-  <text x="631" y="114" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">shot IDs, assets, camera</text>
-  <text x="631" y="128" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">lighting, seed, job type</text>
-
-  <line x1="158" y1="99" x2="184" y2="99" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="184,99 176,94 176,104" fill="#8b8df0"/>
-  <line x1="292" y1="99" x2="320" y2="99" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="320,99 312,94 312,104" fill="#8b8df0"/>
-  <line x1="530" y1="99" x2="562" y2="99" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="562,99 554,94 554,104" fill="#8b8df0"/>
-
-  <rect x="40" y="174" width="116" height="54" rx="8" fill="#10131a" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="98" y="194" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Scripts</text>
-  <text x="98" y="211" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">watch-folder queue</text>
-
-  <rect x="190" y="174" width="116" height="54" rx="8" fill="#10131a" stroke="#8b8df0" stroke-width="1.4"/>
-  <text x="248" y="194" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Processing</text>
-  <text x="248" y="211" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">atomic move + lock</text>
-
-  <rect x="340" y="174" width="116" height="54" rx="8" fill="#10131a" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="398" y="194" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Completed</text>
-  <text x="398" y="211" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">accepted manifests</text>
-
-  <rect x="490" y="174" width="116" height="54" rx="8" fill="#10131a" stroke="#513039" stroke-width="1.2"/>
-  <text x="548" y="194" fill="#fca5a5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Quarantine</text>
-  <text x="548" y="211" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">bad JSON / failures</text>
-
-  <text x="98" y="158" fill="#8b8df0" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">Watch-folder lifecycle</text>
-  <line x1="156" y1="201" x2="190" y2="201" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="190,201 182,196 182,206" fill="#8b8df0"/>
-  <line x1="306" y1="201" x2="340" y2="201" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="340,201 332,196 332,206" fill="#8b8df0"/>
-  <path d="M306 214 C370 250, 430 250, 490 214" fill="none" stroke="#f87171" stroke-width="1.3" stroke-dasharray="4 4"/>
-  <polygon points="490,214 481,212 485,221" fill="#f87171"/>
-
-  <path d="M631 136 C631 160, 98 148, 98 174" fill="none" stroke="#8b8df0" stroke-width="1.3"/>
-  <polygon points="98,174 93,166 103,166" fill="#8b8df0"/>
-
-  <rect x="24" y="262" width="150" height="70" rx="9" fill="#111318" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="99" y="282" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">VRAM Sentinel</text>
-  <text x="99" y="299" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">GTX 1650 Ti / 4 GB</text>
-  <text x="99" y="313" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">strict serial GPU stages</text>
-  <text x="99" y="327" fill="#8b8df0" font-family="sans-serif" font-size="9" text-anchor="middle">cooldown + zombie cleanup</text>
-
-  <rect x="204" y="262" width="116" height="70" rx="9" fill="#111318" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="262" y="282" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Blender Headless</text>
-  <text x="262" y="299" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">Depth / OpenPose</text>
-  <text x="262" y="313" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">Normal / Lighting</text>
-  <text x="262" y="327" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">guide maps</text>
-
-  <rect x="350" y="262" width="116" height="70" rx="9" fill="#111318" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="408" y="282" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">SD Forge</text>
-  <text x="408" y="299" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">ControlNet stack</text>
-  <text x="408" y="313" fill="#b9c0cc" font-family="sans-serif" font-size="9" text-anchor="middle">style + inpaint</text>
-  <text x="408" y="327" fill="#8b8df0" font-family="sans-serif" font-size="9" text-anchor="middle">Red Pen repair pass</text>
-
-  <rect x="496" y="262" width="92" height="70" rx="9" fill="#111318" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="542" y="282" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Render Cache</text>
-  <text x="542" y="300" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">CharID</text>
-  <text x="542" y="313" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">AnimID + Cam</text>
-  <text x="542" y="326" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">LightingHex hash</text>
-
-  <rect x="618" y="248" width="82" height="98" rx="9" fill="#111318" stroke="#8b8df0" stroke-width="1.3"/>
-  <text x="659" y="269" fill="#f4f4f5" font-family="sans-serif" font-size="11" font-weight="700" text-anchor="middle">Final Shot</text>
-  <text x="659" y="287" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">Renders_Final</text>
-  <text x="659" y="300" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">History</text>
-  <text x="659" y="313" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">QC notes</text>
-  <text x="659" y="330" fill="#8b8df0" font-family="sans-serif" font-size="8" text-anchor="middle">dashboard review</text>
-
-  <line x1="174" y1="297" x2="204" y2="297" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="204,297 196,292 196,302" fill="#8b8df0"/>
-  <line x1="320" y1="297" x2="350" y2="297" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="350,297 342,292 342,302" fill="#8b8df0"/>
-  <line x1="466" y1="297" x2="496" y2="297" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="496,297 488,292 488,302" fill="#8b8df0"/>
-  <line x1="588" y1="297" x2="618" y2="297" stroke="#8b8df0" stroke-width="1.6"/>
-  <polygon points="618,297 610,292 610,302" fill="#8b8df0"/>
-
-  <path d="M248 228 C248 245, 99 245, 99 262" fill="none" stroke="#8b8df0" stroke-width="1.3"/>
-  <polygon points="99,262 94,254 104,254" fill="#8b8df0"/>
-
-  <rect x="618" y="156" width="82" height="62" rx="8" fill="#10131a" stroke="#2b3140" stroke-width="1.2"/>
-  <text x="659" y="176" fill="#f4f4f5" font-family="sans-serif" font-size="10" font-weight="700" text-anchor="middle">Voice Stack</text>
-  <text x="659" y="193" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">ElevenLabs</text>
-  <text x="659" y="205" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">RVC</text>
-  <text x="659" y="217" fill="#b9c0cc" font-family="sans-serif" font-size="8" text-anchor="middle">Wav2Lip</text>
-
-  <path d="M631 136 C690 139, 690 156, 659 156" fill="none" stroke="#7dd3fc" stroke-width="1.2"/>
-  <polygon points="659,156 667,151 667,161" fill="#7dd3fc"/>
-  <line x1="659" y1="218" x2="659" y2="248" stroke="#7dd3fc" stroke-width="1.2"/>
-  <polygon points="659,248 654,240 664,240" fill="#7dd3fc"/>
-
-  <path d="M659 346 C530 358, 90 352, 89 136" fill="none" stroke="#4b5563" stroke-width="1.1" stroke-dasharray="4 4"/>
-  <polygon points="89,136 84,144 94,144" fill="#4b5563"/>
-  <text x="355" y="350" fill="#8f96a3" font-family="sans-serif" font-size="8" text-anchor="middle">review loop: logs, previews, Red Pen fixes, re-render requests</text>
+  <path d="M 240 270 C 260 270, 260 190, 280 190" class="arrow purple-stroke" marker-end="url(#arrow-purple)"/>
+  <path d="M 480 276 L 480 292" class="arrow cyan-stroke" marker-end="url(#arrow-cyan)"/>
+  <path d="M 680 190 C 704 190, 700 270, 720 270" class="arrow cyan-stroke" marker-end="url(#arrow-cyan)"/>
+  <path d="M 680 380 C 704 380, 700 314, 720 314" class="arrow green-stroke" marker-end="url(#arrow-green)"/>
+  <path d="M 480 458 L 480 462" class="arrow green-stroke" marker-end="url(#arrow-green)"/>
 </svg>

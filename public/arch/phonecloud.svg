@@ -1,164 +1,141 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" fill="none">
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PhoneCloud architecture diagram">
   <defs>
-    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#11131a"/>
-      <stop offset="1" stop-color="#0d0f14"/>
-    </linearGradient>
-    <linearGradient id="boxGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#121521"/>
-      <stop offset="1" stop-color="#0f1219"/>
-    </linearGradient>
-    <linearGradient id="accentWash" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#8b8df0" stop-opacity="0.18"/>
-      <stop offset="1" stop-color="#8b8df0" stop-opacity="0.04"/>
-    </linearGradient>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b8df0"/>
+    <marker id="arrow-purple" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#8b8df0"/>
     </marker>
+    <marker id="arrow-cyan" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#67d5ff"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#6ee7b7"/>
+    </marker>
+    <style>
+      .bg { fill: #08090a; }
+      .grid { stroke: #161a23; stroke-width: 1; opacity: .5; }
+      .frame { fill: #0a0c10; stroke: #1d2330; stroke-width: 1.4; }
+      .panel { fill: #0e1117; stroke: #273044; stroke-width: 1.3; }
+      .card, .chip, .footer-chip { fill: #111620; stroke: #30384c; stroke-width: 1.1; }
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { fill: #f1f5ff; font-size: 28px; font-weight: 780; letter-spacing: 0; }
+      .subtitle { fill: #9ba6bb; font-size: 15px; }
+      .label { font-size: 13px; font-weight: 760; letter-spacing: 1.4px; text-transform: uppercase; }
+      .body { fill: #f1f5ff; font-size: 14px; }
+      .strong { font-weight: 720; }
+      .small { font-size: 12.5px; }
+      .muted { fill: #9ba6bb; font-size: 12px; }
+      .dim { fill: #727d91; font-size: 11px; }
+      .purple { fill: #8b8df0; }
+      .cyan { fill: #67d5ff; }
+      .green { fill: #6ee7b7; }
+      .amber { fill: #f7c873; }
+      .purple-fill { fill: #8b8df0; }
+      .cyan-fill { fill: #67d5ff; }
+      .green-fill { fill: #6ee7b7; }
+      .amber-fill { fill: #f7c873; }
+      .arrow { fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .purple-stroke { stroke: #8b8df0; }
+      .cyan-stroke { stroke: #67d5ff; }
+      .green-stroke { stroke: #6ee7b7; }
+    </style>
   </defs>
 
-  <rect x="0" y="0" width="720" height="420" fill="#08090a"/>
-  <rect x="18" y="16" width="684" height="388" rx="18" fill="none" stroke="#171a22" stroke-width="1"/>
+  <rect width="960" height="560" class="bg"/>
+  <path d="M 40 88 V 520" class="grid"/><path d="M 104 88 V 520" class="grid"/><path d="M 168 88 V 520" class="grid"/><path d="M 232 88 V 520" class="grid"/><path d="M 296 88 V 520" class="grid"/><path d="M 360 88 V 520" class="grid"/><path d="M 424 88 V 520" class="grid"/><path d="M 488 88 V 520" class="grid"/><path d="M 552 88 V 520" class="grid"/><path d="M 616 88 V 520" class="grid"/><path d="M 680 88 V 520" class="grid"/><path d="M 744 88 V 520" class="grid"/><path d="M 808 88 V 520" class="grid"/><path d="M 872 88 V 520" class="grid"/><path d="M 936 88 V 520" class="grid"/>
+  <path d="M 32 100 H 928" class="grid"/><path d="M 32 152 H 928" class="grid"/><path d="M 32 204 H 928" class="grid"/><path d="M 32 256 H 928" class="grid"/><path d="M 32 308 H 928" class="grid"/><path d="M 32 360 H 928" class="grid"/><path d="M 32 412 H 928" class="grid"/><path d="M 32 464 H 928" class="grid"/>
+  <rect x="16" y="16" width="928" height="528" rx="28" class="frame"/>
+  <circle cx="825" cy="96" r="78" fill="#8b8df0" opacity=".055"/>
+  <circle cx="108" cy="476" r="58" fill="#6ee7b7" opacity=".045"/>
 
-  <text x="24" y="30" fill="#f3f5ff" font-family="sans-serif" font-size="18" font-weight="700" letter-spacing="0.2">PhoneCloud</text>
-  <text x="24" y="47" fill="#9aa3b6" font-family="sans-serif" font-size="10">Distributed local compute fabric across phones, PCs, and operator surfaces</text>
+  <text x="40" y="58" class="title" >PhoneCloud</text>
+  <text x="40" y="82" class="subtitle" >Typed job fabric across phones and PCs with leased execution and operator visibility</text>
 
-  <rect x="24" y="60" width="150" height="236" rx="16" fill="url(#panelGrad)" stroke="#232735" stroke-width="1.2"/>
-  <rect x="188" y="60" width="258" height="236" rx="16" fill="url(#panelGrad)" stroke="#2a2f41" stroke-width="1.2"/>
-  <rect x="188" y="60" width="258" height="236" rx="16" fill="url(#accentWash)"/>
-  <rect x="460" y="60" width="236" height="236" rx="16" fill="url(#panelGrad)" stroke="#232735" stroke-width="1.2"/>
-  <rect x="24" y="310" width="672" height="86" rx="16" fill="url(#panelGrad)" stroke="#232735" stroke-width="1.2"/>
+  
+    <rect x="40" y="110" width="200" height="320" rx="22" class="panel"/>
+    <text x="64" y="146" class="label purple">Surfaces</text>
+  
+      <rect x="64" y="174" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="190" r="4" class="purple-fill"/>
+      <text x="96" y="195" class="body strong small">CLI</text>
+      <rect x="64" y="218" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="234" r="4" class="purple-fill"/>
+      <text x="96" y="239" class="body strong small">Python SDK</text>
+      <rect x="64" y="262" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="278" r="4" class="purple-fill"/>
+      <text x="96" y="283" class="body strong small">Next.js console</text>
+      <rect x="64" y="306" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="322" r="4" class="purple-fill"/>
+      <text x="96" y="327" class="body strong small">Android app</text>
 
-  <text x="38" y="84" fill="#8b8df0" font-family="sans-serif" font-size="11" font-weight="700">CLIENT SURFACES</text>
-  <text x="202" y="84" fill="#8b8df0" font-family="sans-serif" font-size="11" font-weight="700">FASTAPI CONTROL PLANE</text>
-  <text x="474" y="84" fill="#8b8df0" font-family="sans-serif" font-size="11" font-weight="700">STATE, QUEUE, SECRETS, OBSERVABILITY</text>
-  <text x="38" y="334" fill="#8b8df0" font-family="sans-serif" font-size="11" font-weight="700">DISPOSABLE WORKER FLEET</text>
+  
+    
+    <rect x="280" y="110" width="400" height="166" rx="22" class="panel"/>
+    <text x="304" y="146" class="label cyan">FastAPI Control Plane</text>
+    
+    <rect x="304" y="168" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="168" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="189" class="body strong">72 routes</text>
+    <text x="466" y="189" class="body muted">nodes, jobs, artifacts</text>
+    <rect x="304" y="206" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="206" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="227" class="body strong">Scheduler</text>
+    <text x="466" y="227" class="body muted">capability weighted</text>
+    <rect x="304" y="244" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="244" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="265" class="body strong">Telemetry</text>
+    <text x="466" y="265" class="body muted">SSE + event logs</text>
+  
+    
+    <rect x="280" y="292" width="400" height="166" rx="22" class="panel"/>
+    <text x="304" y="328" class="label green">Worker Fleet</text>
+    
+    <rect x="304" y="350" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="350" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="371" class="body strong">PC agents</text>
+    <text x="466" y="371" class="body muted">Python runtimes</text>
+    <rect x="304" y="388" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="388" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="409" class="body strong">Android workers</text>
+    <text x="466" y="409" class="body muted">foreground service</text>
+    <rect x="304" y="426" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="426" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="447" class="body strong">Adapters</text>
+    <text x="466" y="447" class="body muted">Ollama, llama.cpp, shell</text>
 
-  <rect x="36" y="96" width="126" height="38" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="48" y="112" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">CLI</text>
-  <text x="48" y="125" fill="#9aa3b6" font-family="sans-serif" font-size="9">start • submit • logs • doctor</text>
+  
+    <rect x="720" y="110" width="200" height="320" rx="22" class="panel"/>
+    <text x="744" y="146" class="label amber">State + Ops</text>
+  
+      <rect x="744" y="174" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="190" r="4" class="amber-fill"/>
+      <text x="776" y="195" class="body strong small">Postgres</text>
+      <rect x="744" y="218" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="234" r="4" class="amber-fill"/>
+      <text x="776" y="239" class="body strong small">Redis Streams</text>
+      <rect x="744" y="262" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="278" r="4" class="amber-fill"/>
+      <text x="776" y="283" class="body strong small">MinIO artifacts</text>
+      <rect x="744" y="306" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="322" r="4" class="amber-fill"/>
+      <text x="776" y="327" class="body strong small">Vault leases</text>
+      <rect x="744" y="350" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="366" r="4" class="amber-fill"/>
+      <text x="776" y="371" class="body strong small">Prometheus/Grafana</text>
 
-  <rect x="36" y="142" width="126" height="38" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="48" y="158" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">Python SDK</text>
-  <text x="48" y="171" fill="#9aa3b6" font-family="sans-serif" font-size="9">typed API client • credentials</text>
+  <rect x="40" y="462" width="880" height="58" rx="20" class="panel"/>
+  <text x="64" y="497" class="label green" >Key signals</text>
+  
+      <rect x="184" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="256" y="496" class="dim" text-anchor="middle">mTLS pairing</text>
+      <rect x="358" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="430" y="496" class="dim" text-anchor="middle">lease renewals</text>
+      <rect x="532" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="604" y="496" class="dim" text-anchor="middle">DLQ recovery</text>
+      <rect x="706" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="778" y="496" class="dim" text-anchor="middle">metering summaries</text>
 
-  <rect x="36" y="188" width="126" height="38" rx="10" fill="url(#boxGrad)" stroke="#8b8df0" stroke-width="1.2"/>
-  <text x="48" y="204" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">Next.js 15 Console</text>
-  <text x="48" y="217" fill="#9aa3b6" font-family="sans-serif" font-size="9">fleet • billing • logs • SSE</text>
-
-  <rect x="36" y="234" width="126" height="38" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="48" y="250" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">Android App</text>
-  <text x="48" y="263" fill="#9aa3b6" font-family="sans-serif" font-size="9">2-QR pairing • updates • control</text>
-
-  <line x1="162" y1="115" x2="174" y2="115" stroke="#5c6478" stroke-width="1"/>
-  <line x1="162" y1="161" x2="174" y2="161" stroke="#5c6478" stroke-width="1"/>
-  <line x1="162" y1="207" x2="174" y2="207" stroke="#5c6478" stroke-width="1"/>
-  <line x1="162" y1="253" x2="174" y2="253" stroke="#5c6478" stroke-width="1"/>
-  <line x1="174" y1="115" x2="174" y2="253" stroke="#5c6478" stroke-width="1"/>
-  <path d="M174 184 H188" stroke="#8b8df0" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <text x="132" y="181" fill="#8b8df0" font-family="sans-serif" font-size="8">REST</text>
-  <text x="130" y="192" fill="#8b8df0" font-family="sans-serif" font-size="8">+ SSE</text>
-
-  <text x="202" y="104" fill="#f3f5ff" font-family="sans-serif" font-size="18" font-weight="700">72 routes</text>
-  <text x="202" y="121" fill="#9aa3b6" font-family="sans-serif" font-size="10">nodes • jobs • job types • artifacts • secrets • metering • events • mobile bootstrap</text>
-
-  <rect x="202" y="134" width="230" height="70" rx="12" fill="url(#boxGrad)" stroke="#353d52"/>
-  <text x="216" y="151" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Capability-aware weighted scheduler</text>
-  <text x="216" y="167" fill="#9aa3b6" font-family="sans-serif" font-size="9">filters: required capabilities • runtime backend • circuit breakers • heartbeat freshness</text>
-  <text x="216" y="182" fill="#9aa3b6" font-family="sans-serif" font-size="9">scores: hot model +30 • thermal penalty • tokens/sec • project stickiness • priority</text>
-  <text x="216" y="196" fill="#9aa3b6" font-family="sans-serif" font-size="9">emits placement decisions for operator explainability</text>
-
-  <rect x="202" y="96" width="72" height="24" rx="12" fill="#0f1420" stroke="#2e3650"/>
-  <text x="214" y="111" fill="#dfe5ff" font-family="sans-serif" font-size="9" font-weight="700">Auth · tenancy</text>
-
-  <rect x="282" y="96" width="68" height="24" rx="12" fill="#0f1420" stroke="#2e3650"/>
-  <text x="295" y="111" fill="#dfe5ff" font-family="sans-serif" font-size="9" font-weight="700">SSE · telemetry</text>
-
-  <rect x="358" y="96" width="74" height="24" rx="12" fill="#0f1420" stroke="#2e3650"/>
-  <text x="371" y="111" fill="#dfe5ff" font-family="sans-serif" font-size="9" font-weight="700">mTLS certs</text>
-
-  <rect x="202" y="218" width="72" height="50" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="214" y="236" fill="#eef2ff" font-family="sans-serif" font-size="10" font-weight="700">Jobs</text>
-  <text x="214" y="248" fill="#9aa3b6" font-family="sans-serif" font-size="8">validate</text>
-  <text x="214" y="258" fill="#9aa3b6" font-family="sans-serif" font-size="8">submit + wait</text>
-
-  <rect x="281" y="218" width="72" height="50" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="293" y="236" fill="#eef2ff" font-family="sans-serif" font-size="10" font-weight="700">Nodes</text>
-  <text x="293" y="248" fill="#9aa3b6" font-family="sans-serif" font-size="8">register</text>
-  <text x="293" y="258" fill="#9aa3b6" font-family="sans-serif" font-size="8">heartbeat • pair</text>
-
-  <rect x="360" y="218" width="72" height="50" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="372" y="236" fill="#eef2ff" font-family="sans-serif" font-size="10" font-weight="700">Artifacts</text>
-  <text x="372" y="248" fill="#9aa3b6" font-family="sans-serif" font-size="8">presigned URLs</text>
-  <text x="372" y="258" fill="#9aa3b6" font-family="sans-serif" font-size="8">metering</text>
-
-  <rect x="472" y="96" width="100" height="58" rx="12" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="486" y="116" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Postgres</text>
-  <text x="486" y="130" fill="#9aa3b6" font-family="sans-serif" font-size="9">jobs • nodes • events</text>
-  <text x="486" y="142" fill="#9aa3b6" font-family="sans-serif" font-size="9">usage • pairing tokens</text>
-
-  <rect x="584" y="96" width="100" height="58" rx="12" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="598" y="116" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Redis Streams</text>
-  <text x="598" y="129" fill="#9aa3b6" font-family="sans-serif" font-size="8">XREADGROUP • XAUTOCLAIM</text>
-  <text x="598" y="140" fill="#9aa3b6" font-family="sans-serif" font-size="8">delayed zset • leases • DLQ</text>
-
-  <rect x="472" y="162" width="100" height="58" rx="12" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="486" y="182" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">MinIO</text>
-  <text x="486" y="196" fill="#9aa3b6" font-family="sans-serif" font-size="9">versioned artifact buckets</text>
-  <text x="486" y="208" fill="#9aa3b6" font-family="sans-serif" font-size="9">presigned upload/download</text>
-
-  <rect x="584" y="162" width="100" height="58" rx="12" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="598" y="182" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Vault</text>
-  <text x="598" y="196" fill="#9aa3b6" font-family="sans-serif" font-size="9">short-lived secret leases</text>
-  <text x="598" y="208" fill="#9aa3b6" font-family="sans-serif" font-size="8.5">no long-lived creds on nodes</text>
-
-  <rect x="472" y="228" width="100" height="46" rx="12" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="486" y="247" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Prometheus</text>
-  <text x="486" y="260" fill="#9aa3b6" font-family="sans-serif" font-size="8">scrapes CP + workers</text>
-
-  <rect x="584" y="228" width="100" height="46" rx="12" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="598" y="247" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Grafana</text>
-  <text x="598" y="260" fill="#9aa3b6" font-family="sans-serif" font-size="8">dashboards + ops views</text>
-
-  <text x="164" y="326" fill="#9aa3b6" font-family="sans-serif" font-size="10">mTLS + lease bearer • heartbeat • drain/cooldown • offline recovery</text>
-
-  <rect x="42" y="344" width="202" height="36" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="56" y="359" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">PC / edge node agent</text>
-  <text x="56" y="372" fill="#9aa3b6" font-family="sans-serif" font-size="9">Python agent • checkpoint recovery • metrics</text>
-
-  <rect x="260" y="344" width="202" height="36" rx="10" fill="url(#boxGrad)" stroke="#8b8df0" stroke-width="1.1"/>
-  <text x="274" y="359" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">Android worker agent</text>
-  <text x="274" y="372" fill="#9aa3b6" font-family="sans-serif" font-size="9">Kotlin/Compose • foreground service • wake lock</text>
-
-  <rect x="478" y="344" width="202" height="36" rx="10" fill="url(#boxGrad)" stroke="#2a3040"/>
-  <text x="492" y="359" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">Runtime adapters</text>
-  <text x="492" y="372" fill="#9aa3b6" font-family="sans-serif" font-size="9">llama.cpp • Ollama • compute-shell • mock</text>
-
-  <path d="M446 125 H472" stroke="#8b8df0" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <path d="M446 145 H584" stroke="#8b8df0" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <path d="M446 190 H472" stroke="#8b8df0" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <path d="M446 210 H584" stroke="#8b8df0" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <path d="M446 250 H472" stroke="#8b8df0" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
-  <path d="M572 251 H584" stroke="#8b8df0" stroke-width="1.6" marker-end="url(#arrow)"/>
-  <text x="487" y="139" fill="#8b8df0" font-family="sans-serif" font-size="8">queue + leases</text>
-  <text x="416" y="184" fill="#8b8df0" font-family="sans-serif" font-size="8">metadata</text>
-  <text x="470" y="204" fill="#8b8df0" font-family="sans-serif" font-size="8">secret backend</text>
-  <text x="394" y="244" fill="#8b8df0" font-family="sans-serif" font-size="8">/metrics</text>
-
-  <path d="M317 296 V344" stroke="#8b8df0" stroke-width="2" marker-end="url(#arrow)"/>
-  <path d="M317 296 V310" stroke="#8b8df0" stroke-width="2"/>
-  <text x="326" y="321" fill="#8b8df0" font-family="sans-serif" font-size="8">register • heartbeat • results</text>
-
-  <path d="M530 344 C 540 300, 560 238, 620 154" stroke="#8b8df0" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <text x="552" y="280" fill="#8b8df0" font-family="sans-serif" font-size="8">claim • renew • ack/nack</text>
-
-  <path d="M580 344 C 568 308, 550 270, 530 220" stroke="#8b8df0" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <text x="561" y="301" fill="#8b8df0" font-family="sans-serif" font-size="8">artifact upload</text>
-
-  <path d="M602 344 C 620 320, 612 292, 548 251" stroke="#8b8df0" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#arrow)"/>
-  <text x="618" y="315" fill="#8b8df0" font-family="sans-serif" font-size="8">scrape</text>
-
-  <rect x="536" y="24" width="160" height="24" rx="12" fill="#0f1219" stroke="#242938"/>
-  <circle cx="550" cy="36" r="4" fill="#8b8df0"/>
-  <text x="560" y="39" fill="#d8ddf9" font-family="sans-serif" font-size="9">cert bootstrap + CA rollover</text>
+  <path d="M 240 270 C 260 270, 260 190, 280 190" class="arrow purple-stroke" marker-end="url(#arrow-purple)"/>
+  <path d="M 480 276 L 480 292" class="arrow cyan-stroke" marker-end="url(#arrow-cyan)"/>
+  <path d="M 680 190 C 704 190, 700 270, 720 270" class="arrow cyan-stroke" marker-end="url(#arrow-cyan)"/>
+  <path d="M 680 380 C 704 380, 700 314, 720 314" class="arrow green-stroke" marker-end="url(#arrow-green)"/>
+  <path d="M 480 458 L 480 462" class="arrow green-stroke" marker-end="url(#arrow-green)"/>
 </svg>

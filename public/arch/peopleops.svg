@@ -1,136 +1,141 @@
-<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0" y="0" width="720" height="360" fill="#08090a"/>
-  <rect x="18" y="18" width="684" height="324" rx="22" fill="#0b0d10" stroke="#151821" stroke-width="1.5"/>
-  <circle cx="640" cy="44" r="54" fill="#8b8df0" opacity="0.05"/>
-  <circle cx="676" cy="322" r="42" fill="#67d5ff" opacity="0.04"/>
-  <circle cx="42" cy="318" r="36" fill="#6ee7b7" opacity="0.035"/>
+<svg viewBox="0 0 960 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PeopleOps HRMS architecture diagram">
+  <defs>
+    <marker id="arrow-purple" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#8b8df0"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#67d5ff"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#6ee7b7"/>
+    </marker>
+    <style>
+      .bg { fill: #08090a; }
+      .grid { stroke: #161a23; stroke-width: 1; opacity: .5; }
+      .frame { fill: #0a0c10; stroke: #1d2330; stroke-width: 1.4; }
+      .panel { fill: #0e1117; stroke: #273044; stroke-width: 1.3; }
+      .card, .chip, .footer-chip { fill: #111620; stroke: #30384c; stroke-width: 1.1; }
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .title { fill: #f1f5ff; font-size: 28px; font-weight: 780; letter-spacing: 0; }
+      .subtitle { fill: #9ba6bb; font-size: 15px; }
+      .label { font-size: 13px; font-weight: 760; letter-spacing: 1.4px; text-transform: uppercase; }
+      .body { fill: #f1f5ff; font-size: 14px; }
+      .strong { font-weight: 720; }
+      .small { font-size: 12.5px; }
+      .muted { fill: #9ba6bb; font-size: 12px; }
+      .dim { fill: #727d91; font-size: 11px; }
+      .purple { fill: #8b8df0; }
+      .cyan { fill: #67d5ff; }
+      .green { fill: #6ee7b7; }
+      .amber { fill: #f7c873; }
+      .purple-fill { fill: #8b8df0; }
+      .cyan-fill { fill: #67d5ff; }
+      .green-fill { fill: #6ee7b7; }
+      .amber-fill { fill: #f7c873; }
+      .arrow { fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .purple-stroke { stroke: #8b8df0; }
+      .cyan-stroke { stroke: #67d5ff; }
+      .green-stroke { stroke: #6ee7b7; }
+    </style>
+  </defs>
 
-  <text x="30" y="40" fill="#eef2ff" font-family="sans-serif" font-size="17" font-weight="700">PeopleOps HRMS</text>
-  <text x="30" y="57" fill="#9aa3b2" font-family="sans-serif" font-size="10.5">Dual-plane architecture: HRMS transaction plane on AWS + independent Supabase control plane on Vercel</text>
+  <rect width="960" height="560" class="bg"/>
+  <path d="M 40 88 V 520" class="grid"/><path d="M 104 88 V 520" class="grid"/><path d="M 168 88 V 520" class="grid"/><path d="M 232 88 V 520" class="grid"/><path d="M 296 88 V 520" class="grid"/><path d="M 360 88 V 520" class="grid"/><path d="M 424 88 V 520" class="grid"/><path d="M 488 88 V 520" class="grid"/><path d="M 552 88 V 520" class="grid"/><path d="M 616 88 V 520" class="grid"/><path d="M 680 88 V 520" class="grid"/><path d="M 744 88 V 520" class="grid"/><path d="M 808 88 V 520" class="grid"/><path d="M 872 88 V 520" class="grid"/><path d="M 936 88 V 520" class="grid"/>
+  <path d="M 32 100 H 928" class="grid"/><path d="M 32 152 H 928" class="grid"/><path d="M 32 204 H 928" class="grid"/><path d="M 32 256 H 928" class="grid"/><path d="M 32 308 H 928" class="grid"/><path d="M 32 360 H 928" class="grid"/><path d="M 32 412 H 928" class="grid"/><path d="M 32 464 H 928" class="grid"/>
+  <rect x="16" y="16" width="928" height="528" rx="28" class="frame"/>
+  <circle cx="825" cy="96" r="78" fill="#8b8df0" opacity=".055"/>
+  <circle cx="108" cy="476" r="58" fill="#6ee7b7" opacity=".045"/>
 
-  <rect x="30" y="122" width="92" height="106" rx="16" fill="#0f1116" stroke="#222834" stroke-width="1.4"/>
-  <text x="46" y="144" fill="#8b8df0" font-family="sans-serif" font-size="10" font-weight="700">ENTRY</text>
-  <text x="46" y="168" fill="#eef2ff" font-family="sans-serif" font-size="14" font-weight="700">Browser</text>
-  <text x="46" y="186" fill="#9aa3b2" font-family="sans-serif" font-size="10">employees</text>
-  <text x="46" y="200" fill="#9aa3b2" font-family="sans-serif" font-size="10">HR / admins</text>
-  <text x="46" y="214" fill="#9aa3b2" font-family="sans-serif" font-size="10">platform ops</text>
+  <text x="40" y="58" class="title" >PeopleOps HRMS</text>
+  <text x="40" y="82" class="subtitle" >Dual-plane HR SaaS: employee portal on AWS, platform control on Vercel</text>
 
-  <rect x="146" y="72" width="286" height="86" rx="18" fill="#0f1116" stroke="#30374a" stroke-width="1.6"/>
-  <text x="164" y="94" fill="#8b8df0" font-family="sans-serif" font-size="10" font-weight="700">VERCEL SURFACE</text>
-  <text x="164" y="109" fill="#9aa3b2" font-family="sans-serif" font-size="10">React SPA serves both the employee portal and the independent /platform console</text>
+  
+    <rect x="40" y="110" width="200" height="320" rx="22" class="panel"/>
+    <text x="64" y="146" class="label purple">Users</text>
+  
+      <rect x="64" y="174" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="190" r="4" class="purple-fill"/>
+      <text x="96" y="195" class="body strong small">Employees</text>
+      <rect x="64" y="218" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="234" r="4" class="purple-fill"/>
+      <text x="96" y="239" class="body strong small">HR admins</text>
+      <rect x="64" y="262" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="278" r="4" class="purple-fill"/>
+      <text x="96" y="283" class="body strong small">Platform ops</text>
+      <rect x="64" y="306" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="82" cy="322" r="4" class="purple-fill"/>
+      <text x="96" y="327" class="body strong small">Tenant owners</text>
 
-  <rect x="164" y="116" width="118" height="28" rx="10" fill="#121722" stroke="#3b4356" stroke-width="1.1"/>
-  <text x="177" y="134" fill="#eef2ff" font-family="sans-serif" font-size="11.5" font-weight="700">React SPA</text>
-  <text x="232" y="134" fill="#9aa3b2" font-family="sans-serif" font-size="10">dashboard / admin / payroll</text>
+  
+    
+    <rect x="280" y="110" width="400" height="166" rx="22" class="panel"/>
+    <text x="304" y="146" class="label cyan">Vercel Surface</text>
+    
+    <rect x="304" y="168" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="168" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="189" class="body strong">React SPA</text>
+    <text x="466" y="189" class="body muted">portal, admin, payroll</text>
+    <rect x="304" y="206" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="206" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="227" class="body strong">/api/platform</text>
+    <text x="466" y="227" class="body muted">jobs, tenants, webhooks</text>
+    <rect x="304" y="244" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="244" width="5" height="32" rx="3" class="cyan-fill"/>
+    <text x="322" y="265" class="body strong">Auth Split</text>
+    <text x="466" y="265" class="body muted">Cognito | Supabase Auth</text>
+  
+    
+    <rect x="280" y="292" width="400" height="166" rx="22" class="panel"/>
+    <text x="304" y="328" class="label green">HRMS Transaction Plane</text>
+    
+    <rect x="304" y="350" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="350" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="371" class="body strong">API Gateway</text>
+    <text x="466" y="371" class="body muted">REST boundary</text>
+    <rect x="304" y="388" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="388" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="409" class="body strong">Python Lambdas</text>
+    <text x="466" y="409" class="body muted">attendance, leave, payroll</text>
+    <rect x="304" y="426" width="352" height="32" rx="11" class="card"/>
+    <rect x="304" y="426" width="5" height="32" rx="3" class="green-fill"/>
+    <text x="322" y="447" class="body strong">Shared handlers</text>
+    <text x="466" y="447" class="body muted">db_mode selects backend</text>
 
-  <rect x="294" y="116" width="122" height="28" rx="10" fill="#121722" stroke="#3b4356" stroke-width="1.1"/>
-  <text x="308" y="134" fill="#eef2ff" font-family="sans-serif" font-size="11.5" font-weight="700">/api/platform</text>
-  <text x="379" y="134" fill="#9aa3b2" font-family="sans-serif" font-size="10">jobs / tenants / webhook</text>
+  
+    <rect x="720" y="110" width="200" height="320" rx="22" class="panel"/>
+    <text x="744" y="146" class="label amber">Data + Control</text>
+  
+      <rect x="744" y="174" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="190" r="4" class="amber-fill"/>
+      <text x="776" y="189" class="body strong small">Aurora or</text><text x="776" y="203" class="body strong small">Supabase</text>
+      <rect x="744" y="218" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="234" r="4" class="amber-fill"/>
+      <text x="776" y="239" class="body strong small">S3 documents</text>
+      <rect x="744" y="262" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="278" r="4" class="amber-fill"/>
+      <text x="776" y="283" class="body strong small">Platform DB</text>
+      <rect x="744" y="306" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="322" r="4" class="amber-fill"/>
+      <text x="776" y="327" class="body strong small">GitHub Actions</text>
+      <rect x="744" y="350" width="152" height="32" rx="10" class="chip"/>
+      <circle cx="762" cy="366" r="4" class="amber-fill"/>
+      <text x="776" y="371" class="body strong small">HMAC callbacks</text>
 
-  <rect x="146" y="176" width="346" height="150" rx="18" fill="#0f1116" stroke="#29465c" stroke-width="1.6"/>
-  <text x="164" y="198" fill="#67d5ff" font-family="sans-serif" font-size="10" font-weight="700">HRMS TRANSACTION PLANE</text>
-  <text x="164" y="213" fill="#9aa3b2" font-family="sans-serif" font-size="10">Cognito-secured business flows: attendance, leave, payroll,</text>
-  <text x="164" y="225" fill="#9aa3b2" font-family="sans-serif" font-size="10">documents, dashboards, tenant admin</text>
+  <rect x="40" y="462" width="880" height="58" rx="20" class="panel"/>
+  <text x="64" y="497" class="label green" >Key signals</text>
+  
+      <rect x="184" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="256" y="496" class="dim" text-anchor="middle">PostGIS geofencing</text>
+      <rect x="358" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="430" y="496" class="dim" text-anchor="middle">tenant RBAC</text>
+      <rect x="532" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="604" y="496" class="dim" text-anchor="middle">audit ledger</text>
+      <rect x="706" y="478" width="144" height="26" rx="13" class="footer-chip"/>
+      <text x="778" y="496" class="dim" text-anchor="middle">payslip/export jobs</text>
 
-  <rect x="164" y="228" width="82" height="42" rx="11" fill="#121722" stroke="#355870" stroke-width="1.2"/>
-  <text x="178" y="246" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Cognito</text>
-  <text x="178" y="259" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">portal auth</text>
-
-  <rect x="258" y="228" width="94" height="42" rx="11" fill="#121722" stroke="#355870" stroke-width="1.2"/>
-  <text x="271" y="246" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">API Gateway</text>
-  <text x="271" y="259" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">REST boundary</text>
-
-  <rect x="364" y="220" width="112" height="58" rx="13" fill="#121722" stroke="#355870" stroke-width="1.2"/>
-  <text x="378" y="239" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Python Lambdas</text>
-  <text x="378" y="253" fill="#9aa3b2" font-family="sans-serif" font-size="9.2">attendance · leave · payroll</text>
-  <text x="378" y="265" fill="#9aa3b2" font-family="sans-serif" font-size="9.2">documents · dashboard · tenants</text>
-
-  <rect x="164" y="286" width="92" height="26" rx="9" fill="#121722" stroke="#3f645c" stroke-width="1.1"/>
-  <text x="178" y="303" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">Aurora PG</text>
-  <text x="235" y="303" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">Serverless v2</text>
-
-  <rect x="268" y="286" width="106" height="26" rx="9" fill="#121722" stroke="#3f645c" stroke-width="1.1"/>
-  <text x="281" y="303" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">Supabase PG</text>
-  <text x="343" y="303" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">db_mode=supabase</text>
-
-  <rect x="386" y="286" width="90" height="26" rx="9" fill="#121722" stroke="#3f645c" stroke-width="1.1"/>
-  <text x="399" y="303" fill="#eef2ff" font-family="sans-serif" font-size="11" font-weight="700">S3 + files</text>
-  <text x="444" y="303" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">docs / payslips</text>
-
-  <rect x="278" y="172" width="128" height="18" rx="9" fill="#12202b" stroke="#39556e" stroke-width="1"/>
-  <text x="289" y="184.5" fill="#9edfff" font-family="sans-serif" font-size="9.3" font-weight="700">shared handlers + schema switch via db_mode</text>
-
-  <rect x="514" y="72" width="176" height="254" rx="18" fill="#0f1116" stroke="#494b8e" stroke-width="1.6"/>
-  <text x="532" y="94" fill="#8b8df0" font-family="sans-serif" font-size="10" font-weight="700">INDEPENDENT CONTROL PLANE</text>
-  <text x="532" y="108" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">Stays online if AWS is destroyed;</text>
-  <text x="532" y="119" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">owns tenants, jobs, env state</text>
-
-  <rect x="532" y="126" width="66" height="44" rx="11" fill="#121722" stroke="#5c5bb0" stroke-width="1.2"/>
-  <text x="543" y="144" fill="#eef2ff" font-family="sans-serif" font-size="11.5" font-weight="700">Supabase</text>
-  <text x="543" y="157" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">Auth · PlatformOwner</text>
-
-  <rect x="608" y="126" width="64" height="44" rx="11" fill="#121722" stroke="#5c5bb0" stroke-width="1.2"/>
-  <text x="621" y="144" fill="#eef2ff" font-family="sans-serif" font-size="11.5" font-weight="700">Platform</text>
-  <text x="621" y="157" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">DB · jobs / tenants</text>
-
-  <rect x="532" y="184" width="140" height="52" rx="13" fill="#121722" stroke="#5c5bb0" stroke-width="1.2"/>
-  <text x="546" y="203" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Job orchestration</text>
-  <text x="546" y="217" fill="#9aa3b2" font-family="sans-serif" font-size="9.3">validates role, stores events/logs,</text>
-  <text x="546" y="228" fill="#9aa3b2" font-family="sans-serif" font-size="9.3">signs and verifies HMAC callbacks</text>
-
-  <rect x="532" y="250" width="66" height="46" rx="11" fill="#121722" stroke="#5c5bb0" stroke-width="1.2"/>
-  <text x="543" y="269" fill="#eef2ff" font-family="sans-serif" font-size="11.5" font-weight="700">GitHub</text>
-  <text x="543" y="282" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">Actions</text>
-
-  <rect x="608" y="250" width="64" height="46" rx="11" fill="#121722" stroke="#5c5bb0" stroke-width="1.2"/>
-  <text x="619" y="269" fill="#eef2ff" font-family="sans-serif" font-size="11.5" font-weight="700">Infra ops</text>
-  <text x="619" y="282" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">deploy / destroy</text>
-
-  <rect x="522" y="36" width="156" height="18" rx="9" fill="#171933" stroke="#5b5cb4" stroke-width="1"/>
-  <text x="533" y="48.5" fill="#cfd2ff" font-family="sans-serif" font-size="9.2" font-weight="700">separate auth domain from HRMS Cognito</text>
-
-  <rect x="534" y="306" width="154" height="14" rx="7" fill="#141727" stroke="#424579" stroke-width="1"/>
-  <text x="546" y="316.5" fill="#9aa3b2" font-family="sans-serif" font-size="8.2">webhook updates env + tenant status</text>
-
-  <rect x="196" y="334" width="328" height="12" rx="6" fill="#0f1116" stroke="#1d2230" stroke-width="1"/>
-  <text x="206" y="343.2" fill="#7f8898" font-family="sans-serif" font-size="8.7">Attendance geofencing uses PostGIS ST_DWithin; payroll can generate S3-backed payslip PDFs and export bank files</text>
-
-  <path d="M122 175 L146 175" fill="none" stroke="#8b8df0" stroke-width="2.2" stroke-linecap="round"/>
-  <polygon points="146,175 138,171 138,179" fill="#8b8df0"/>
-  <path d="M282 130 L504 130" fill="none" stroke="#8b8df0" stroke-width="2" stroke-linecap="round"/>
-  <polygon points="504,130 496,126 496,134" fill="#8b8df0"/>
-  <text x="363" y="124" fill="#9aa3b2" font-family="sans-serif" font-size="8.8">platform API calls</text>
-  <path d="M220 144 L220 228" fill="none" stroke="#67d5ff" stroke-width="2.2" stroke-linecap="round"/>
-  <polygon points="220,228 216,220 224,220" fill="#67d5ff"/>
-  <text x="180" y="170" fill="#9aa3b2" font-family="sans-serif" font-size="8.8">HRMS routes</text>
-  <path d="M306 144 L306 228" fill="none" stroke="#67d5ff" stroke-width="2.2" stroke-linecap="round"/>
-  <polygon points="306,228 302,220 310,220" fill="#67d5ff"/>
-  <path d="M352 249 L364 249" fill="none" stroke="#67d5ff" stroke-width="2.2" stroke-linecap="round"/>
-  <polygon points="364,249 356,245 356,253" fill="#67d5ff"/>
-  <path d="M476 245 L494 245 L494 214 L514 214" fill="none" stroke="#8b8df0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="514,214 506,210 506,218" fill="#8b8df0"/>
-  <path d="M420 278 L420 282 L374 282" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="374,282 382,278 382,286" fill="#6ee7b7"/>
-  <path d="M420 278 L420 282 L476 282" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="476,282 468,278 468,286" fill="#6ee7b7"/>
-  <path d="M402 278 L402 282 L256 282" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="256,282 264,278 264,286" fill="#6ee7b7"/>
-  <path d="M320 286 L320 278" fill="none" stroke="#8b8df0" stroke-width="2.2" stroke-linecap="round"/>
-  <polygon points="320,278 316,286 324,286" fill="#8b8df0"/>
-  <text x="287" y="281" fill="#cfd2ff" font-family="sans-serif" font-size="8.8">same codebase</text>
-  <path d="M416 116 L416 76 L565 76 L565 126" fill="none" stroke="#8b8df0" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="565,126 561,118 569,118" fill="#8b8df0"/>
-  <text x="472" y="70" fill="#9aa3b2" font-family="sans-serif" font-size="8.8">/platform login uses Supabase Auth, not Cognito</text>
-  <path d="M604 236 L604 250" fill="none" stroke="#8b8df0" stroke-width="1.9" stroke-linecap="round"/>
-  <polygon points="604,250 600,242 608,242" fill="#8b8df0"/>
-  <path d="M598 273 L608 273" fill="none" stroke="#8b8df0" stroke-width="1.9" stroke-linecap="round"/>
-  <polygon points="608,273 600,269 600,277" fill="#8b8df0"/>
-  <path d="M652 250 L652 170 L640 170" fill="none" stroke="#8b8df0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="640,170 648,166 648,174" fill="#8b8df0"/>
-  <text x="618" y="176" fill="#9aa3b2" font-family="sans-serif" font-size="8.8">workflow callback</text>
-  <path d="M640 250 L640 170 L356 170 L356 116" fill="none" stroke="#8b8df0" stroke-width="1.8" stroke-dasharray="5 4" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="356,116 352,124 360,124" fill="#8b8df0"/>
-  <text x="494" y="165" fill="#9aa3b2" font-family="sans-serif" font-size="8.8">HMAC-signed webhook to Vercel</text>
-  <rect x="44" y="238" width="64" height="14" rx="7" fill="#171933" stroke="#353a58" stroke-width="1"/>
-  <text x="53" y="248.5" fill="#cfd2ff" font-family="sans-serif" font-size="8.7">single browser, two auth paths</text>
+  <path d="M 240 270 C 260 270, 260 190, 280 190" class="arrow purple-stroke" marker-end="url(#arrow-purple)"/>
+  <path d="M 480 276 L 480 292" class="arrow cyan-stroke" marker-end="url(#arrow-cyan)"/>
+  <path d="M 680 190 C 704 190, 700 270, 720 270" class="arrow cyan-stroke" marker-end="url(#arrow-cyan)"/>
+  <path d="M 680 380 C 704 380, 700 314, 720 314" class="arrow green-stroke" marker-end="url(#arrow-green)"/>
+  <path d="M 480 458 L 480 462" class="arrow green-stroke" marker-end="url(#arrow-green)"/>
 </svg>

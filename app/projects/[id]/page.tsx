@@ -7,7 +7,7 @@ import { ProjectFacts } from "@/components/ProjectFacts";
 import { ProjectLinks } from "@/components/ProjectLinks";
 import { Sidebar } from "@/components/Sidebar";
 import { StatusPill } from "@/components/StatusPill";
-import { featured, getProjectById, profile } from "@/lib/data";
+import { featured, getProjectById } from "@/lib/data";
 import { ARCH_DIAGRAMS } from "@/lib/arch";
 
 interface PageProps {
