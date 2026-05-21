@@ -3,14 +3,10 @@
 import { useEffect, useState } from "react";
 import { LinkedInIcon, GitHubIcon, MailIcon } from "./icons";
 import { profile } from "@/lib/data";
-
-interface Section {
-  id: string;
-  label: string;
-}
+import type { NavSection } from "@/lib/data";
 
 interface Props {
-  sections: Section[];
+  sections: NavSection[];
 }
 
 /**
@@ -96,10 +92,10 @@ export function MobileNavMenu({ sections }: Props) {
           <a href={`mailto:${profile.email}`} aria-label="Email" className="hover:text-tx-2 transition-colors">
             <MailIcon className="size-[22px]" />
           </a>
-          <a href={profile.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-tx-2 transition-colors">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-tx-2 transition-colors">
             <LinkedInIcon className="size-[22px]" />
           </a>
-          <a href={profile.github} target="_blank" rel="noopener" aria-label="GitHub" className="hover:text-tx-2 transition-colors">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-tx-2 transition-colors">
             <GitHubIcon className="size-[22px]" />
           </a>
         </div>

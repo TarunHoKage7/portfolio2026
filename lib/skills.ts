@@ -61,14 +61,27 @@ export const clusters: Cluster[] = [
     ],
   },
   {
+    id: "web",
+    name: "Web & APIs",
+    blurb: "The surface layer — server-rendered frontends and high-throughput API services.",
+    skills: [
+      { name: "FastAPI", depth: 3 },
+      { name: "Next.js", depth: 3 },
+      { name: "React", depth: 3 },
+      { name: "Vite", depth: 2 },
+      { name: "Tailwind CSS", depth: 3 },
+    ],
+  },
+  {
     id: "ai",
     name: "AI & ML",
     blurb: "Pipelines that ship, not notebooks that demo.",
     skills: [
-      { name: "LangGraph", depth: 2 },
-      { name: "LangChain", depth: 2 },
+      { name: "Gemini API", depth: 3 },
       { name: "OpenAI API", depth: 3 },
       { name: "Anthropic API", depth: 2 },
+      { name: "LangGraph", depth: 2 },
+      { name: "LangChain", depth: 2 },
       { name: "Bedrock", depth: 2 },
       { name: "Vector DBs", depth: 2 },
     ],
@@ -109,4 +122,24 @@ export const clusters: Cluster[] = [
       { name: "OAuth/OIDC", depth: 2 },
     ],
   },
+];
+
+/**
+ * Curated cross-cluster selection shown as a preview on the home page.
+ * Always a subset of names that exist in `clusters` above — keeps the
+ * home snippet in sync with the canonical skill set.
+ */
+export const featuredSkills: string[] = [
+  "AWS Lambda",
+  "API Gateway",
+  "AWS CDK",
+  "Aurora Postgres Serverless v2",
+  "PostGIS",
+  "Redis Streams",
+  "FastAPI",
+  "Python",
+  "TypeScript",
+  "Docker",
+  "Gemini API",
+  "OpenAI API",
 ];

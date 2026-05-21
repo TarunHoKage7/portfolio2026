@@ -8,16 +8,21 @@ export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
   if (diagramSrc) {
     return (
       <div className="rounded-xl border border-line-strong overflow-hidden bg-[#08090a]">
-        {/* Horizontal scroll on narrow viewports so SVG text stays legible */}
+        {/*
+         * overflow-x-auto + min-w on the img: on wide screens the diagram fills
+         * the content area; on narrow screens it scrolls rather than squishing
+         * below legibility. width/height give the browser an aspect-ratio hint
+         * before the lazy-loaded SVG arrives, preventing layout shift.
+         */}
         <div className="overflow-x-auto">
-          <div className="min-w-[680px]">
-            <img
-              src={diagramSrc}
-              alt="Architecture diagram"
-              className="w-full h-auto block"
-              loading="lazy"
-            />
-          </div>
+          <img
+            src={diagramSrc}
+            alt="Architecture diagram"
+            width={720}
+            height={380}
+            className="w-full h-auto block min-w-[680px]"
+            loading="lazy"
+          />
         </div>
         {caption && (
           <p className="px-5 py-3 text-tx-3 text-[12.5px] leading-relaxed border-t border-line">
@@ -30,7 +35,6 @@ export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
 
   return (
     <div className="relative overflow-hidden rounded-xl border border-dashed border-line-strong bg-bg-panel/40 p-8">
-      {/* Subtle grid background */}
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{

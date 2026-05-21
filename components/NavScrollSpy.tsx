@@ -1,14 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-interface Section {
-  id: string;
-  label: string;
-}
+import type { NavSection } from "@/lib/data";
 
 interface Props {
-  sections: Section[];
+  sections: NavSection[];
 }
 
 export function NavScrollSpy({ sections }: Props) {

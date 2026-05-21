@@ -5,6 +5,7 @@ import { Sidebar } from "@/components/Sidebar";
 import { MobileNavMenu } from "@/components/MobileNavMenu";
 import { LinkedInIcon, GitHubIcon, MailIcon } from "@/components/icons";
 import { experience, featured, homeHighlights, archive, profile } from "@/lib/data";
+import { featuredSkills } from "@/lib/skills";
 
 const SECTIONS = [
   { id: "about", label: "About" },
@@ -20,7 +21,7 @@ export default function Home() {
     <>
     <MobileNavMenu sections={SECTIONS} />
     <PageShell sidebar={<Sidebar sections={SECTIONS} />} sidebarSpan={5}>
-      <div className="space-y-24">
+      <div className="space-y-32">
         <section id="about" aria-label="About">
           <p className="lead">
             I&apos;m an engineer who builds <strong>product-grade systems</strong> end-to-end on AWS —
@@ -43,22 +44,23 @@ export default function Home() {
         </section>
 
         <section id="experience" aria-label="Experience">
-          <div className="space-y-10">
-            {experience.map((e, i) => (
-              <article key={i} className="grid grid-cols-[110px_1fr] gap-6">
+          <div className="eyebrow mb-8">Experience</div>
+          <div className="space-y-12">
+            {experience.map((e) => (
+              <article key={e.company} className="grid grid-cols-[110px_1fr] gap-6">
                 <div className="font-mono text-[10.5px] tracking-widest uppercase text-tx-4 pt-1">
                   {e.when}
                 </div>
                 <div>
                   <div className="text-[15px] text-tx font-medium">{e.role}</div>
-                  <div className="text-[14px] text-tx-3 mt-0.5">
+                  <div className="text-[14px] text-tx-3 mt-1">
                     {e.company}
                     {e.sub && <span className="text-tx-4"> · {e.sub}</span>}
                   </div>
-                  <ul className="mt-3 space-y-1.5 text-[14px] text-tx-2 list-disc pl-5 marker:text-tx-5">
-                    {e.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                  <ul className="mt-5 space-y-2.5 text-[14px] text-tx-2 list-disc pl-5 marker:text-tx-5">
+                    {e.bullets.map((b) => <li key={b}>{b}</li>)}
                   </ul>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
+                  <div className="mt-5 flex flex-wrap gap-1.5">
                     {e.tags.map((t) => <span key={t} className="tag">{t}</span>)}
                   </div>
                 </div>
@@ -68,28 +70,26 @@ export default function Home() {
         </section>
 
         <section id="projects" aria-label="Projects">
-          <div className="space-y-1">
+          <div className="eyebrow mb-8">Projects</div>
+          <div className="space-y-4">
             {homeHighlights.map((p) => <ProjectRow key={p.id} project={p} maxStack={6} />)}
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 mt-8 text-[14px] font-medium text-tx border-b border-line-strong hover:text-accent hover:border-accent transition-colors pb-1"
+            className="inline-flex items-center gap-2 mt-10 text-[14px] font-medium text-tx border-b border-line-strong hover:text-accent hover:border-accent transition-colors pb-1"
           >
             See all {featured.length} projects <span aria-hidden>→</span>
           </Link>
         </section>
 
         <section id="skills" aria-label="Skills">
+          <div className="eyebrow mb-8">Skills</div>
           <p className="lead mb-6">
             I work across <strong>serverless backends</strong>, data &amp; storage, observability,
             and increasingly AI pipelines. Languages: Python, TypeScript, SQL.
           </p>
           <div className="flex flex-wrap gap-2 mb-8">
-            {[
-              "AWS Lambda", "API Gateway", "AWS CDK", "Aurora Postgres",
-              "PostGIS", "Redis Streams", "FastAPI", "Python",
-              "TypeScript", "Docker", "Gemini", "OpenAI API",
-            ].map((s) => <span key={s} className="tag">{s}</span>)}
+            {featuredSkills.map((s) => <span key={s} className="tag">{s}</span>)}
           </div>
           <Link
             href="/skills"
@@ -100,13 +100,14 @@ export default function Home() {
         </section>
 
         <section id="archive" aria-label="Early Work">
+          <div className="eyebrow mb-8">Early work</div>
           <p className="lead mb-6">
             Calculators, tile games, IoT experiments, early Node APIs. Useful when I built them.
             Not what I do now.
           </p>
           <div className="divide-y divide-line border-y border-line">
-            {archive.map((a, i) => (
-              <div key={i} className="flex items-baseline justify-between gap-6 py-3.5">
+            {archive.map((a) => (
+              <div key={a.name} className="flex items-baseline justify-between gap-6 py-4">
                 <div className="min-w-0">
                   <div className="text-[14px] text-tx-2">{a.name}</div>
                   <div className="text-[13px] text-tx-4 mt-0.5">{a.desc}</div>
@@ -120,6 +121,7 @@ export default function Home() {
         </section>
 
         <section id="contact" aria-label="Contact">
+          <div className="eyebrow mb-8">Contact</div>
           <p className="lead">
             Founding engineer roles, contract work, or a design-partner pilot &mdash; pick a channel
             and I&apos;ll reply within 24 hours.

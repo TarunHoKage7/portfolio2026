@@ -1,16 +1,12 @@
 import Link from "next/link";
 import { profile } from "@/lib/data";
+import type { NavSection } from "@/lib/data";
 import { GitHubIcon, LinkedInIcon, MailIcon } from "./icons";
 import { NavScrollSpy } from "./NavScrollSpy";
 import { StatusPill } from "./StatusPill";
 
-interface Section {
-  id: string;
-  label: string;
-}
-
 interface Props {
-  sections?: Section[];
+  sections?: NavSection[];
   backLink?: boolean;
 }
 
@@ -33,18 +29,18 @@ export function Sidebar({ sections, backLink }: Props) {
           </Link>
         </h1>
 
-        <div className="mt-4 text-[17px] text-tx font-medium">{profile.role}</div>
+        <div className="mt-3 text-[17px] text-tx font-medium">{profile.role}</div>
         {profile.cert && (
-          <div className="mt-1 text-[12.5px] font-mono tracking-wide text-tx-3">
+          <div className="mt-2 text-[12.5px] font-mono tracking-wide text-tx-3">
             {profile.cert}
           </div>
         )}
 
-        <p className="mt-5 max-w-[34ch] text-[14.5px] leading-relaxed text-tx-3">
+        <p className="mt-7 max-w-[34ch] text-[14.5px] leading-relaxed text-tx-3">
           {profile.tagline}
         </p>
 
-        <div className="mt-7">
+        <div className="mt-10">
           <StatusPill status="openToWork" label={profile.status} pulse />
         </div>
       </div>
@@ -59,10 +55,10 @@ export function Sidebar({ sections, backLink }: Props) {
         <a href={`mailto:${profile.email}`} aria-label="Email" className="hover:text-tx transition-colors">
           <MailIcon className="size-[22px]" />
         </a>
-        <a href={profile.linkedin} target="_blank" rel="noopener" aria-label="LinkedIn" className="hover:text-tx transition-colors">
+        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-tx transition-colors">
           <LinkedInIcon className="size-[22px]" />
         </a>
-        <a href={profile.github} target="_blank" rel="noopener" aria-label="GitHub" className="hover:text-tx transition-colors">
+        <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-tx transition-colors">
           <GitHubIcon className="size-[22px]" />
         </a>
       </div>

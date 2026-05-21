@@ -6,6 +6,12 @@ import { itr } from "./projects/itr";
 import { ytstudio } from "./projects/ytstudio";
 import { bountybrain } from "./projects/bountybrain";
 
+/** Shared shape for scroll-spy nav sections (sidebar, mobile menu). */
+export interface NavSection {
+  id: string;
+  label: string;
+}
+
 export type ProjectStatus = "production" | "live" | "build" | "design";
 export type StatusKind = ProjectStatus | "openToWork";
 

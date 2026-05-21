@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
-import { ProjectRow } from "@/components/ProjectRow";
+import { ProjectCard } from "@/components/ProjectCard";
 import { Sidebar } from "@/components/Sidebar";
 import { featured } from "@/lib/data";
 
@@ -15,19 +15,21 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <PageShell sidebar={<Sidebar backLink />}>
-      <header className="mb-10">
-        <div className="eyebrow mb-4">Projects · {featured.length} entries</div>
-        <h2 className="text-[32px] font-semibold tracking-tight text-tx">
+      <header className="mb-12">
+        <div className="eyebrow mb-4">Projects · {featured.length}</div>
+        <h2 className="text-[32px] font-semibold tracking-tight text-tx leading-[1.1]">
           Things I&apos;ve built and shipped.
         </h2>
-        <p className="lead mt-3">
-          Seven projects across serverless SaaS, local-first tools, AI pipelines, and distributed
-          infra. Click any row for the full writeup.
+        <p className="lead mt-4">
+          Serverless SaaS, local-first tools, AI pipelines, distributed infra.
+          Click any card for the full writeup.
         </p>
       </header>
 
-      <div className="space-y-1">
-        {featured.map((p) => <ProjectRow key={p.id} project={p} />)}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {featured.map((p) => (
+          <ProjectCard key={p.id} project={p} />
+        ))}
       </div>
     </PageShell>
   );

@@ -145,7 +145,7 @@ h1, h2, h3 { letter-spacing: -0.02em; }
   max-width: 60ch;
   text-wrap: pretty;
 }
-.lead + .lead { margin-top: 18px; }
+.lead + .lead { margin-top: 24px; }
 .lead strong { color: var(--color-tx); font-weight: 500; }
 
 .eyebrow {

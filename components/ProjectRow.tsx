@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Project } from "@/lib/data";
+import { truncateStack } from "@/lib/utils";
 import { StatusPill } from "./StatusPill";
 
 interface Props {
@@ -9,11 +10,7 @@ interface Props {
 }
 
 export function ProjectRow({ project, maxStack }: Props) {
-  const visible = maxStack ? project.stack.slice(0, maxStack) : project.stack;
-  const overflow =
-    maxStack && project.stack.length > maxStack
-      ? project.stack.length - maxStack
-      : 0;
+  const [visible, overflow] = truncateStack(project.stack, maxStack);
 
   return (
     <Link
