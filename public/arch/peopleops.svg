@@ -109,13 +109,12 @@
   <polygon points="364,249 356,245 356,253" fill="#67d5ff"/>
   <path d="M476 245 L494 245 L494 214 L514 214" fill="none" stroke="#8b8df0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   <polygon points="514,214 506,210 506,218" fill="#8b8df0"/>
-  <text x="478" y="237" fill="#9aa3b2" font-family="sans-serif" font-size="8.8">admin tenant ops</text>
-  <path d="M420 278 L420 299 L374 299" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="374,299 382,295 382,303" fill="#6ee7b7"/>
-  <path d="M420 278 L420 299 L476 299" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="476,299 468,295 468,303" fill="#6ee7b7"/>
-  <path d="M402 278 L402 299 L256 299" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-  <polygon points="256,299 264,295 264,303" fill="#6ee7b7"/>
+  <path d="M420 278 L420 282 L374 282" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="374,282 382,278 382,286" fill="#6ee7b7"/>
+  <path d="M420 278 L420 282 L476 282" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="476,282 468,278 468,286" fill="#6ee7b7"/>
+  <path d="M402 278 L402 282 L256 282" fill="none" stroke="#6ee7b7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="256,282 264,278 264,286" fill="#6ee7b7"/>
   <path d="M320 286 L320 278" fill="none" stroke="#8b8df0" stroke-width="2.2" stroke-linecap="round"/>
   <polygon points="320,278 316,286 324,286" fill="#8b8df0"/>
   <text x="287" y="281" fill="#cfd2ff" font-family="sans-serif" font-size="8.8">same codebase</text>
