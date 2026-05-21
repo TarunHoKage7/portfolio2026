@@ -47,7 +47,7 @@ export default function Home() {
           <div className="eyebrow mb-8">Experience</div>
           <div className="space-y-12">
             {experience.map((e) => (
-              <article key={e.company} className="grid grid-cols-[110px_1fr] gap-6">
+              <article key={e.company} className="grid grid-cols-[110px_1fr] gap-6 -mx-4 px-4 py-4 rounded-xl border-l-2 border-transparent hover:bg-bg-elev/50 hover:border-accent/25 transition-colors">
                 <div className="font-mono text-[10.5px] tracking-widest uppercase text-tx-4 pt-1">
                   {e.when}
                 </div>
@@ -76,9 +76,10 @@ export default function Home() {
           </div>
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 mt-10 text-[14px] font-medium text-tx border-b border-line-strong hover:text-accent hover:border-accent transition-colors pb-1"
+            className="group inline-flex items-center gap-2 mt-10 text-[13.5px] font-medium text-tx-2 hover:text-accent transition-colors"
           >
-            See all {featured.length} projects <span aria-hidden>→</span>
+            View all {featured.length} projects
+            <span aria-hidden className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
           </Link>
         </section>
 
@@ -93,9 +94,10 @@ export default function Home() {
           </div>
           <Link
             href="/skills"
-            className="inline-flex items-center gap-2 text-[14px] font-medium text-tx border-b border-line-strong hover:text-accent hover:border-accent transition-colors pb-1"
+            className="group inline-flex items-center gap-2 text-[13.5px] font-medium text-tx-2 hover:text-accent transition-colors"
           >
-            Browse all clusters <span aria-hidden>&#x2192;</span>
+            Browse all clusters
+            <span aria-hidden className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
           </Link>
         </section>
 
@@ -107,7 +109,7 @@ export default function Home() {
           </p>
           <div className="divide-y divide-line border-y border-line">
             {archive.map((a) => (
-              <div key={a.name} className="flex items-baseline justify-between gap-6 py-4">
+              <div key={a.name} className="flex items-baseline justify-between gap-6 py-4 -mx-3 px-3 rounded-md hover:bg-bg-elev/40 transition-colors">
                 <div className="min-w-0">
                   <div className="text-[14px] text-tx-2">{a.name}</div>
                   <div className="text-[13px] text-tx-4 mt-0.5">{a.desc}</div>

@@ -7,20 +7,20 @@ interface Props {
 export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
   if (diagramSrc) {
     return (
-      <div className="rounded-xl border border-line-strong overflow-hidden bg-[#08090a]">
+      <div className="rounded-xl border border-line-strong overflow-hidden bg-bg-panel">
         {/*
          * overflow-x-auto + min-w on the img: on wide screens the diagram fills
          * the content area; on narrow screens it scrolls rather than squishing
          * below legibility. width/height give the browser an aspect-ratio hint
          * before the lazy-loaded SVG arrives, preventing layout shift.
          */}
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto p-4">
           <img
             src={diagramSrc}
             alt="Architecture diagram"
             width={720}
             height={430}
-            className="w-full h-auto block min-w-[680px]"
+            className="w-full h-auto block min-w-[640px] rounded-lg"
             loading="lazy"
           />
         </div>
