@@ -13,6 +13,7 @@ interface Props {
 export function Sidebar({ sections, backLink }: Props) {
   return (
     <aside className="relative lg:sticky lg:top-0 lg:h-screen lg:py-24 py-16 flex flex-col">
+      {/* ── Top cluster: identity ─────────────────────────── */}
       <div>
         {backLink && (
           <Link
@@ -29,38 +30,39 @@ export function Sidebar({ sections, backLink }: Props) {
           </Link>
         </h1>
 
-        <div className="mt-3 text-[17px] text-tx font-medium">{profile.role}</div>
+        <div className="mt-3 text-[19px] font-semibold text-tx-2">{profile.role}</div>
         {profile.cert && (
-          <div className="mt-2 text-[12.5px] font-mono tracking-wide text-tx-3">
+          <div className="mt-2 text-[12px] font-mono tracking-wide text-tx-4">
             {profile.cert}
           </div>
         )}
 
-        <p className="mt-7 max-w-[34ch] text-[14.5px] leading-relaxed text-tx-3">
+        <p className="mt-6 max-w-[32ch] text-[14px] leading-[1.7] text-tx-3">
           {profile.tagline}
         </p>
 
-        <div className="mt-10">
+        <div className="mt-8">
           <StatusPill status="openToWork" label={profile.status} pulse />
         </div>
       </div>
 
-      {sections && (
-        <div className="mt-14 lg:mt-16">
-          <NavScrollSpy sections={sections} />
-        </div>
-      )}
+      {/* ── Bottom cluster: nav + social ─────────────────── */}
+      {/* mt-auto pushes this group to the lower half of the sidebar,
+          matching the visual rhythm where navigation sits near the bottom */}
+      <div className="mt-auto flex flex-col gap-10">
+        {sections && <NavScrollSpy sections={sections} />}
 
-      <div className="mt-auto pt-14 flex gap-4 text-tx-3">
-        <a href={`mailto:${profile.email}`} aria-label="Email" className="hover:text-tx transition-colors">
-          <MailIcon className="size-[22px]" />
-        </a>
-        <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-tx transition-colors">
-          <LinkedInIcon className="size-[22px]" />
-        </a>
-        <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-tx transition-colors">
-          <GitHubIcon className="size-[22px]" />
-        </a>
+        <div className="flex gap-5 text-tx-4">
+          <a href={`mailto:${profile.email}`} aria-label="Email" className="hover:text-tx transition-colors">
+            <MailIcon className="size-[22px]" />
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-tx transition-colors">
+            <LinkedInIcon className="size-[22px]" />
+          </a>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-tx transition-colors">
+            <GitHubIcon className="size-[22px]" />
+          </a>
+        </div>
       </div>
     </aside>
   );

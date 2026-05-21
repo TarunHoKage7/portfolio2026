@@ -139,10 +139,10 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 }
 
 .lead {
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.7;
   color: var(--color-tx-2);
-  max-width: 60ch;
+  max-width: 58ch;
   text-wrap: pretty;
 }
 .lead + .lead { margin-top: 24px; }
@@ -176,20 +176,21 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 
 .tag {
   display: inline-flex; align-items: center;
-  padding: 3px 9px;
+  padding: 4px 12px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.04em;
-  color: var(--color-tx-2);
-  background: var(--color-bg-panel);
-  border: 1px solid var(--color-line);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: var(--color-accent);
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-line);
   border-radius: 999px;
   white-space: nowrap;
 }
 
-.tag[data-depth="3"] { color: var(--color-tx); border-color: var(--color-line-strong); }
-.tag[data-depth="2"] { color: var(--color-tx-2); }
-.tag[data-depth="1"] { color: var(--color-tx-3); }
+/* Skill depth variants — dim less-used skills progressively */
+.tag[data-depth="3"] { color: var(--color-accent); }
+.tag[data-depth="2"] { color: var(--color-tx-2); background: var(--color-bg-elev); border-color: var(--color-line-strong); }
+.tag[data-depth="1"] { color: var(--color-tx-4); background: transparent; border-color: var(--color-line); }
 
 /* ─────────────────────────────────────────────────────────────────
    Status pill

@@ -52,15 +52,15 @@ export default function Home() {
                   {e.when}
                 </div>
                 <div>
-                  <div className="text-[15px] text-tx font-medium">{e.role}</div>
-                  <div className="text-[14px] text-tx-3 mt-1">
+                  <div className="text-[16px] text-tx font-semibold leading-snug">{e.role}</div>
+                  <div className="text-[14px] text-tx-3 mt-1.5">
                     {e.company}
                     {e.sub && <span className="text-tx-4"> · {e.sub}</span>}
                   </div>
-                  <ul className="mt-5 space-y-2.5 text-[14px] text-tx-2 list-disc pl-5 marker:text-tx-5">
+                  <ul className="mt-5 space-y-3 text-[14.5px] text-tx-2 leading-relaxed list-disc pl-5 marker:text-tx-5">
                     {e.bullets.map((b) => <li key={b}>{b}</li>)}
                   </ul>
-                  <div className="mt-5 flex flex-wrap gap-1.5">
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {e.tags.map((t) => <span key={t} className="tag">{t}</span>)}
                   </div>
                 </div>
