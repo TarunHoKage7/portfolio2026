@@ -7,7 +7,7 @@ interface Props {
 export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
   if (diagramSrc) {
     return (
-      <div className="rounded-xl border border-line-strong overflow-hidden bg-bg-panel">
+      <div className="rounded-xl border border-line-strong bg-bg-panel [overflow:clip]">
         {/*
          * overflow-x-auto + min-w on the img: on wide screens the diagram fills
          * the content area; on narrow screens it scrolls rather than squishing
