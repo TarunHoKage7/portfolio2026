@@ -47,7 +47,7 @@ export default function Home() {
           <div className="eyebrow mb-8">Experience</div>
           <div className="space-y-12">
             {experience.map((e) => (
-              <article key={e.company} className="grid grid-cols-[110px_1fr] gap-6 -mx-4 px-4 py-4 rounded-xl border-l-2 border-transparent hover:bg-bg-elev/50 hover:border-white/25 transition-colors">
+              <article key={e.company} className="spotlight grid grid-cols-[110px_1fr] gap-6 -mx-4 px-4 py-4 rounded-xl hover:bg-bg-elev/50 transition-colors">
                 <div className="font-mono text-[10.5px] tracking-widest uppercase text-tx-4 pt-1">
                   {e.when}
                 </div>
@@ -109,7 +109,7 @@ export default function Home() {
           </p>
           <div className="divide-y divide-line border-y border-line">
             {archive.map((a) => (
-              <div key={a.name} className="flex items-baseline justify-between gap-6 py-4 -mx-3 px-3 rounded-md hover:bg-bg-elev/40 transition-colors">
+              <div key={a.name} className="spotlight flex items-baseline justify-between gap-6 py-4 -mx-3 px-3 rounded-md hover:bg-bg-elev/40 transition-colors">
                 <div className="min-w-0">
                   <div className="text-[14px] text-tx-2">{a.name}</div>
                   <div className="text-[13px] text-tx-4 mt-0.5">{a.desc}</div>

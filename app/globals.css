@@ -122,6 +122,46 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ─────────────────────────────────────────────────────────────────
+   Spotlight border — 1px gradient border that lights up where the
+   cursor is near. Local cursor position set by SpotlightTracker via JS.
+   Uses the mask-composite trick to show the gradient only on the
+   1px ring between the outer box and the inner content box.
+   ───────────────────────────────────────────────────────────── */
+
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(
+    260px circle at var(--spot-x, -200px) var(--spot-y, -200px),
+    color-mix(in srgb, var(--color-tx) 65%, transparent),
+    transparent 65%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.spotlight[data-spot="on"]::before { opacity: 1; }
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .spotlight::before { display: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
    Typography primitives — used directly in JSX
    ───────────────────────────────────────────────────────────── */
 

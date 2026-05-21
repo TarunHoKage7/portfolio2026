@@ -13,7 +13,7 @@ export function ProjectCard({ project }: Props) {
   return (
     <Link
       href={`/projects/${project.id}`}
-      className="group relative flex flex-col rounded-xl border border-line bg-bg-panel p-6 transition-all duration-200 hover:border-line-bright hover:bg-bg-elev/50"
+      className="spotlight group relative flex flex-col rounded-xl border border-line bg-bg-panel p-6 transition-all duration-200 hover:bg-bg-elev/50"
     >
       <div className="flex items-center justify-between mb-5">
         <span className="font-mono text-[10px] tracking-widest uppercase text-tx-5">

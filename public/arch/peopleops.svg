@@ -29,7 +29,8 @@
 
   <rect x="146" y="176" width="346" height="150" rx="18" fill="#0f1116" stroke="#29465c" stroke-width="1.6"/>
   <text x="164" y="198" fill="#67d5ff" font-family="sans-serif" font-size="10" font-weight="700">HRMS TRANSACTION PLANE</text>
-  <text x="164" y="213" fill="#9aa3b2" font-family="sans-serif" font-size="10">Cognito-secured business flows: attendance, leave, payroll, documents, dashboards, tenant admin</text>
+  <text x="164" y="213" fill="#9aa3b2" font-family="sans-serif" font-size="10">Cognito-secured business flows: attendance, leave, payroll,</text>
+  <text x="164" y="225" fill="#9aa3b2" font-family="sans-serif" font-size="10">documents, dashboards, tenant admin</text>
 
   <rect x="164" y="228" width="82" height="42" rx="11" fill="#121722" stroke="#355870" stroke-width="1.2"/>
   <text x="178" y="246" fill="#eef2ff" font-family="sans-serif" font-size="12" font-weight="700">Cognito</text>
@@ -61,7 +62,8 @@
 
   <rect x="514" y="72" width="176" height="254" rx="18" fill="#0f1116" stroke="#494b8e" stroke-width="1.6"/>
   <text x="532" y="94" fill="#8b8df0" font-family="sans-serif" font-size="10" font-weight="700">INDEPENDENT CONTROL PLANE</text>
-  <text x="532" y="109" fill="#9aa3b2" font-family="sans-serif" font-size="10">Stays online even if AWS is destroyed; owns tenant lifecycle, jobs, and environment state</text>
+  <text x="532" y="108" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">Stays online if AWS is destroyed;</text>
+  <text x="532" y="119" fill="#9aa3b2" font-family="sans-serif" font-size="9.5">owns tenants, jobs, env state</text>
 
   <rect x="532" y="126" width="66" height="44" rx="11" fill="#121722" stroke="#5c5bb0" stroke-width="1.2"/>
   <text x="543" y="144" fill="#eef2ff" font-family="sans-serif" font-size="11.5" font-weight="700">Supabase</text>

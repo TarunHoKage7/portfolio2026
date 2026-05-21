@@ -10,7 +10,7 @@ export function FeatureCard({ feature, span = "default" }: Props) {
   const Icon = FEATURE_ICONS[feature.icon];
   return (
     <article
-      className={`group relative rounded-xl border border-line bg-bg-panel/60 p-6 transition-colors hover:border-line-bright hover:bg-bg-elev/60 ${
+      className={`spotlight group relative rounded-xl border border-line bg-bg-panel/60 p-6 transition-colors hover:bg-bg-elev/60 ${
         span === "wide" ? "md:col-span-2" : ""
       }`}
     >

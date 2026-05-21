@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { CursorAura } from "@/components/CursorAura";
 import { GridBackground } from "@/components/GridBackground";
+import { SpotlightTracker } from "@/components/SpotlightTracker";
 import { profile } from "@/lib/data";
 
 /**
@@ -68,6 +69,7 @@ export default function RootLayout({
       <body>
         <GridBackground />
         <CursorAura />
+        <SpotlightTracker />
         {children}
       </body>
     </html>
