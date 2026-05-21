@@ -1,0 +1,153 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" role="img" aria-label="ITR Gateway architecture diagram">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#11131a"/>
+      <stop offset="100%" stop-color="#0d0f14"/>
+    </linearGradient>
+    <linearGradient id="accentPanel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#171a2a"/>
+      <stop offset="100%" stop-color="#10121b"/>
+    </linearGradient>
+    <linearGradient id="glowLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8b8df0" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#8b8df0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#8b8df0" stop-opacity="0.2"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b8df0"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7dd3fc"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="720" height="430" fill="#08090a"/>
+  <rect x="16" y="16" width="688" height="398" rx="18" fill="none" stroke="#181b27" stroke-width="1.2"/>
+  <path d="M24 54 H696" stroke="url(#glowLine)" stroke-width="1.2"/>
+
+  <text x="28" y="40" fill="#f5f7ff" font-family="sans-serif" font-size="20" font-weight="700">ITR Gateway</text>
+  <text x="170" y="40" fill="#9ba3c7" font-family="sans-serif" font-size="11">Spec-first multi-tenant platform for CA-managed Indian tax filing</text>
+  <rect x="560" y="24" width="130" height="22" rx="11" fill="#121524" stroke="#2b3150" stroke-width="1"/>
+  <circle cx="574" cy="35" r="4" fill="#8b8df0"/>
+  <text x="584" y="39" fill="#dfe3ff" font-family="sans-serif" font-size="10.5" font-weight="600">Designed topology</text>
+
+  <text x="28" y="72" fill="#7f88b1" font-family="sans-serif" font-size="10" letter-spacing="1.2">CLIENT SURFACES</text>
+  <text x="220" y="72" fill="#7f88b1" font-family="sans-serif" font-size="10" letter-spacing="1.2">AWS MUMBAI APPLICATION CORE</text>
+  <text x="500" y="72" fill="#7f88b1" font-family="sans-serif" font-size="10" letter-spacing="1.2">DATA, CRYPTO, PROVIDERS</text>
+
+  <rect x="28" y="86" width="148" height="88" rx="14" fill="url(#panel)" stroke="#232845" stroke-width="1.2"/>
+  <rect x="40" y="98" width="32" height="50" rx="9" fill="#0e1120" stroke="#8b8df0" stroke-width="1.2"/>
+  <circle cx="56" cy="108" r="2.5" fill="#8b8df0"/>
+  <rect x="47" y="115" width="18" height="22" rx="3" fill="none" stroke="#8b8df0" stroke-width="1"/>
+  <text x="84" y="111" fill="#f4f6ff" font-family="sans-serif" font-size="13" font-weight="700">Android App</text>
+  <text x="84" y="128" fill="#b7bdd8" font-family="sans-serif" font-size="10.5">Kotlin + Jetpack Compose</text>
+  <text x="84" y="143" fill="#9aa3c8" font-family="sans-serif" font-size="10">Taxpayer intake, uploads,</text>
+  <text x="84" y="156" fill="#9aa3c8" font-family="sans-serif" font-size="10">status, DSR, notifications</text>
+
+  <rect x="28" y="188" width="148" height="88" rx="14" fill="url(#panel)" stroke="#232845" stroke-width="1.2"/>
+  <rect x="40" y="201" width="34" height="24" rx="5" fill="#0e1120" stroke="#8b8df0" stroke-width="1.2"/>
+  <rect x="48" y="232" width="50" height="28" rx="6" fill="#0e1120" stroke="#8b8df0" stroke-width="1.2"/>
+  <text x="84" y="213" fill="#f4f6ff" font-family="sans-serif" font-size="13" font-weight="700">CA Web Portal</text>
+  <text x="84" y="230" fill="#b7bdd8" font-family="sans-serif" font-size="10.5">React + Vite + TypeScript</text>
+  <text x="84" y="245" fill="#9aa3c8" font-family="sans-serif" font-size="10">Inbox, document review,</text>
+  <text x="84" y="258" fill="#9aa3c8" font-family="sans-serif" font-size="10">pricing, filing completion</text>
+
+  <rect x="220" y="86" width="230" height="46" rx="14" fill="url(#accentPanel)" stroke="#343b67" stroke-width="1.3"/>
+  <text x="238" y="106" fill="#f5f7ff" font-family="sans-serif" font-size="14" font-weight="700">API Gateway HTTP API</text>
+  <text x="238" y="123" fill="#afb6d9" font-family="sans-serif" font-size="10.5">HTTPS edge, route auth, throttling, bounded entrypoint for all clients</text>
+
+  <rect x="200" y="146" width="270" height="152" rx="16" fill="url(#panel)" stroke="#262b46" stroke-width="1.2"/>
+  <text x="218" y="166" fill="#f1f3ff" font-family="sans-serif" font-size="13" font-weight="700">Bounded-context Lambda services</text>
+  <text x="218" y="181" fill="#97a0c7" font-family="sans-serif" font-size="10">Intended deployment model; implementation phase is pending</text>
+
+  <rect x="218" y="194" width="112" height="84" rx="12" fill="#0f1320" stroke="#39416d" stroke-width="1.1"/>
+  <text x="230" y="212" fill="#e9ecff" font-family="sans-serif" font-size="11.5" font-weight="700">Identity / Firm</text>
+  <text x="230" y="228" fill="#aeb6d8" font-family="sans-serif" font-size="10">OTP flows, JWTs,</text>
+  <text x="230" y="241" fill="#aeb6d8" font-family="sans-serif" font-size="10">CA auth, sessions,</text>
+  <text x="230" y="254" fill="#aeb6d8" font-family="sans-serif" font-size="10">RBAC, DSR endpoints</text>
+
+  <rect x="342" y="194" width="112" height="84" rx="12" fill="#0f1320" stroke="#39416d" stroke-width="1.1"/>
+  <text x="354" y="212" fill="#e9ecff" font-family="sans-serif" font-size="11.5" font-weight="700">Filing / Payments</text>
+  <text x="354" y="228" fill="#aeb6d8" font-family="sans-serif" font-size="10">Filing FSM, pricing,</text>
+  <text x="354" y="241" fill="#aeb6d8" font-family="sans-serif" font-size="10">manual UPI status,</text>
+  <text x="354" y="254" fill="#aeb6d8" font-family="sans-serif" font-size="10">notes, notifications</text>
+
+  <rect x="280" y="286" width="112" height="42" rx="12" fill="#0f1320" stroke="#39416d" stroke-width="1.1"/>
+  <text x="292" y="303" fill="#e9ecff" font-family="sans-serif" font-size="11.5" font-weight="700">Documents / Crypto</text>
+  <text x="292" y="318" fill="#aeb6d8" font-family="sans-serif" font-size="10">Presigned S3, key attestation, view access</text>
+
+  <rect x="500" y="86" width="188" height="78" rx="14" fill="url(#panel)" stroke="#274255" stroke-width="1.2"/>
+  <text x="516" y="106" fill="#f3fbff" font-family="sans-serif" font-size="13" font-weight="700">Supabase Postgres</text>
+  <text x="516" y="123" fill="#bfe6f6" font-family="sans-serif" font-size="10.5">Tenant data, filing state, pricing, audit,</text>
+  <text x="516" y="137" fill="#bfe6f6" font-family="sans-serif" font-size="10.5">idempotency, retention metadata</text>
+  <rect x="516" y="145" width="38" height="12" rx="6" fill="#102330" stroke="#2f6078" stroke-width="1"/>
+  <text x="526" y="154" fill="#8ee1ff" font-family="sans-serif" font-size="9" font-weight="700">RLS</text>
+
+  <rect x="500" y="176" width="188" height="98" rx="14" fill="url(#panel)" stroke="#3d4368" stroke-width="1.2"/>
+  <text x="516" y="196" fill="#f5f7ff" font-family="sans-serif" font-size="13" font-weight="700">S3 Encrypted Documents</text>
+  <text x="516" y="213" fill="#c6cae6" font-family="sans-serif" font-size="10.5">Client-side AES-256-GCM ciphertext</text>
+  <text x="516" y="227" fill="#c6cae6" font-family="sans-serif" font-size="10.5">RSA-OAEP wrapped per-file keys</text>
+  <text x="516" y="241" fill="#c6cae6" font-family="sans-serif" font-size="10.5">Ed25519-signed public-key bootstrap</text>
+  <text x="516" y="255" fill="#9da6cc" font-family="sans-serif" font-size="10">Lambda never carries raw upload bytes</text>
+
+  <rect x="500" y="286" width="188" height="56" rx="14" fill="url(#panel)" stroke="#5a4b86" stroke-width="1.2"/>
+  <text x="516" y="306" fill="#f5f1ff" font-family="sans-serif" font-size="13" font-weight="700">SSM Parameter Store</text>
+  <text x="516" y="323" fill="#d1c8f4" font-family="sans-serif" font-size="10.5">JWT secret, master keys, wrap keys,</text>
+  <text x="516" y="336" fill="#d1c8f4" font-family="sans-serif" font-size="10.5">blind-index pepper, MSG91 / FCM secrets</text>
+
+  <rect x="28" y="324" width="146" height="70" rx="14" fill="url(#panel)" stroke="#273447" stroke-width="1.2"/>
+  <text x="44" y="344" fill="#f4fbff" font-family="sans-serif" font-size="13" font-weight="700">EventBridge Scheduler</text>
+  <text x="44" y="361" fill="#b8d5e4" font-family="sans-serif" font-size="10.5">Cron for retention, idempotency cleanup,</text>
+  <text x="44" y="375" fill="#b8d5e4" font-family="sans-serif" font-size="10.5">DSR, and monthly audit archival</text>
+
+  <rect x="196" y="324" width="130" height="70" rx="14" fill="url(#panel)" stroke="#2d4060" stroke-width="1.2"/>
+  <text x="212" y="344" fill="#f4fbff" font-family="sans-serif" font-size="13" font-weight="700">SQS Queues + DLQs</text>
+  <text x="212" y="361" fill="#b8d5e4" font-family="sans-serif" font-size="10.5">Notifications, DSR jobs,</text>
+  <text x="212" y="375" fill="#b8d5e4" font-family="sans-serif" font-size="10.5">retry boundaries, dead letters</text>
+
+  <rect x="344" y="324" width="132" height="70" rx="14" fill="url(#panel)" stroke="#36516d" stroke-width="1.2"/>
+  <text x="360" y="344" fill="#f4fbff" font-family="sans-serif" font-size="13" font-weight="700">Async Workers</text>
+  <text x="360" y="361" fill="#b8d5e4" font-family="sans-serif" font-size="10.5">Push delivery, DSR execution,</text>
+  <text x="360" y="375" fill="#b8d5e4" font-family="sans-serif" font-size="10.5">retention and archive pipelines</text>
+
+  <rect x="492" y="354" width="94" height="40" rx="12" fill="url(#panel)" stroke="#2f5a66" stroke-width="1.2"/>
+  <text x="506" y="370" fill="#eafcff" font-family="sans-serif" font-size="11.5" font-weight="700">MSG91</text>
+  <text x="506" y="384" fill="#b7dfe7" font-family="sans-serif" font-size="10">OTP, SMS, webhooks</text>
+
+  <rect x="594" y="354" width="94" height="40" rx="12" fill="url(#panel)" stroke="#2f5a66" stroke-width="1.2"/>
+  <text x="608" y="370" fill="#eafcff" font-family="sans-serif" font-size="11.5" font-weight="700">FCM</text>
+  <text x="608" y="384" fill="#b7dfe7" font-family="sans-serif" font-size="10">Push notifications</text>
+
+  <rect x="592" y="86" width="96" height="56" rx="12" fill="#0d1118" stroke="#294a55" stroke-width="1.1"/>
+  <text x="608" y="106" fill="#f1fbff" font-family="sans-serif" font-size="11.5" font-weight="700">Observability</text>
+  <text x="608" y="121" fill="#b6d5dd" font-family="sans-serif" font-size="10">CloudWatch + X-Ray</text>
+  <text x="608" y="134" fill="#b6d5dd" font-family="sans-serif" font-size="10">Logs, metrics, traces</text>
+
+  <path d="M176 130 H220" fill="none" stroke="#8b8df0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M176 232 H220" fill="none" stroke="#8b8df0" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="186" y="122" fill="#8f96bb" font-family="sans-serif" font-size="9.5">HTTPS</text>
+  <text x="186" y="224" fill="#8f96bb" font-family="sans-serif" font-size="9.5">HTTPS</text>
+  <path d="M335 132 V146" fill="none" stroke="#8b8df0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M470 224 H500" fill="none" stroke="#8b8df0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M470 308 H500" fill="none" stroke="#8b8df0" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M454 214 C478 214 478 118 500 118" fill="none" stroke="#8b8df0" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="478" y="210" fill="#8f96bb" font-family="sans-serif" font-size="9">data</text>
+  <text x="475" y="302" fill="#8f96bb" font-family="sans-serif" font-size="9">keys</text>
+
+  <path d="M264 324 V298" fill="none" stroke="#7dd3fc" stroke-width="1.8" marker-end="url(#arrowSoft)"/>
+  <path d="M410 324 V298" fill="none" stroke="#7dd3fc" stroke-width="1.8" marker-end="url(#arrowSoft)"/>
+  <path d="M174 359 H196" fill="none" stroke="#7dd3fc" stroke-width="1.8" marker-end="url(#arrowSoft)"/>
+  <path d="M326 359 H344" fill="none" stroke="#7dd3fc" stroke-width="1.8" marker-end="url(#arrowSoft)"/>
+  <path d="M476 374 H492" fill="none" stroke="#7dd3fc" stroke-width="1.8" marker-end="url(#arrowSoft)"/>
+  <path d="M476 344 C520 344 520 344 594 344 L594 354" fill="none" stroke="#7dd3fc" stroke-width="1.8" marker-end="url(#arrowSoft)"/>
+  <text x="182" y="351" fill="#88b8ca" font-family="sans-serif" font-size="9">cron</text>
+  <text x="332" y="351" fill="#88b8ca" font-family="sans-serif" font-size="9">dispatch</text>
+  <text x="484" y="366" fill="#88b8ca" font-family="sans-serif" font-size="9">OTP / SMS</text>
+  <text x="546" y="338" fill="#88b8ca" font-family="sans-serif" font-size="9">push</text>
+
+  <rect x="548" y="144" width="140" height="18" rx="9" fill="#0d1320" stroke="#26304a" stroke-width="1"/>
+  <text x="560" y="156" fill="#9ca5cf" font-family="sans-serif" font-size="9.5">All primary data residency pinned to India</text>
+
+  <rect x="28" y="398" width="660" height="16" rx="8" fill="#0b0e13" stroke="#1c2030" stroke-width="1"/>
+  <text x="40" y="409" fill="#8f96bb" font-family="sans-serif" font-size="9.5">Intended architecture from repository specs: multi-tenant CA workflow, manual filing on incometax.gov.in, spec complete while implementation remains pending</text>
+</svg>

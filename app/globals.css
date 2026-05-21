@@ -1,0 +1,325 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────
+   Design tokens — Linear-inspired dark base, Brittany-inspired rhythm.
+   Single source of truth. Tailwind v4 reads these via @theme.
+   ───────────────────────────────────────────────────────────── */
+
+@theme {
+  /* Surfaces */
+  --color-bg:           #08090a;
+  --color-bg-panel:     #0c0d0f;
+  --color-bg-elev:      #111214;
+  --color-bg-elev-2:    #16171a;
+  --color-line:         #1c1d20;
+  --color-line-strong:  #2a2b30;
+  --color-line-bright:  #3a3b42;
+
+  /* Text */
+  --color-tx:           #e6e7ea;
+  --color-tx-2:         #b6b8c0;
+  --color-tx-3:         #80828c;
+  --color-tx-4:         #5b5d66;
+  --color-tx-5:         #3a3b42;
+
+  /* Accent — overridable per page later if needed */
+  --color-accent:       #8b8df0;
+  --color-accent-2:     #5e6ad2;
+
+  /* Status */
+  --color-st-prod:      #3ecf8e;
+  --color-st-live:      #4d9cf6;
+  --color-st-build:     #f5a524;
+  --color-st-design:    #b18cf0;
+
+  /* Fonts — wired in layout.tsx via next/font */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* Derived tokens (depend on --color-accent at runtime) */
+:root {
+  --accent-tint: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  --accent-line: color-mix(in srgb, var(--color-accent) 35%, transparent);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Reset + base
+   ───────────────────────────────────────────────────────────── */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-tx);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+img, svg { display: block; max-width: 100%; }
+
+::selection { background: var(--accent-tint); color: var(--color-tx); }
+
+/* ─────────────────────────────────────────────────────────────────
+   Grid background — subtle, fades top-down. Pure decoration.
+   ───────────────────────────────────────────────────────────── */
+
+.grid-bg {
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,0,0,0.55), transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,0,0,0.55), transparent 70%);
+  opacity: 0.4;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Cursor aura — small, restrained. CV-appropriate.
+   Sized via --aura-size; positioned via JS-set CSS vars --mx/--my.
+   ───────────────────────────────────────────────────────────── */
+
+.cursor-aura {
+  --aura-size: 260px;
+  position: fixed;
+  pointer-events: none;
+  z-index: 1;
+  left: 0; top: 0;
+  width: var(--aura-size);
+  height: var(--aura-size);
+  border-radius: 50%;
+  transform: translate3d(calc(var(--mx, -9999px) - 50%), calc(var(--my, -9999px) - 50%), 0);
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--color-accent) 14%, transparent) 0%,
+    color-mix(in srgb, var(--color-accent)  6%, transparent) 30%,
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+.cursor-aura[data-on="true"] { opacity: 1; }
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-aura { display: none; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Typography primitives — used directly in JSX
+   ───────────────────────────────────────────────────────────── */
+
+h1, h2, h3 { letter-spacing: -0.02em; }
+
+.h-name {
+  font-size: clamp(32px, 3.4vw, 44px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.h-section {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-tx-2);
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+.lead + .lead { margin-top: 18px; }
+.lead strong { color: var(--color-tx); font-weight: 500; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-tx-3);
+}
+.eyebrow::before {
+  content: ""; width: 18px; height: 1px;
+  background: var(--color-tx-4);
+}
+
+/* Inline link in prose */
+.ln {
+  color: var(--color-tx);
+  border-bottom: 1px solid var(--color-line-bright);
+  padding-bottom: 1px;
+  transition: color 0.18s, border-color 0.18s;
+}
+.ln:hover { color: var(--color-accent); border-color: var(--color-accent); }
+
+/* ─────────────────────────────────────────────────────────────────
+   Tag chip — reused across project rows, skills clusters
+   ───────────────────────────────────────────────────────────── */
+
+.tag {
+  display: inline-flex; align-items: center;
+  padding: 3px 9px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--color-tx-2);
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tag[data-depth="3"] { color: var(--color-tx); border-color: var(--color-line-strong); }
+.tag[data-depth="2"] { color: var(--color-tx-2); }
+.tag[data-depth="1"] { color: var(--color-tx-3); }
+
+/* ─────────────────────────────────────────────────────────────────
+   Status pill
+   ───────────────────────────────────────────────────────────── */
+
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 9px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--color-tx-2);
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+}
+.pill::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-tx-3);
+}
+.pill[data-status="production"]::before { background: var(--color-st-prod); box-shadow: 0 0 6px var(--color-st-prod); }
+.pill[data-status="live"]::before       { background: var(--color-st-live); box-shadow: 0 0 6px var(--color-st-live); }
+.pill[data-status="build"]::before      { background: var(--color-st-build); box-shadow: 0 0 6px var(--color-st-build); }
+.pill[data-status="design"]::before     { background: var(--color-st-design); box-shadow: 0 0 6px var(--color-st-design); }
+.pill[data-status="openToWork"]::before { background: var(--color-st-prod); box-shadow: 0 0 6px var(--color-st-prod); }
+
+/* Status pill with live pulse (sidebar "Open to work") */
+.pill[data-pulse="true"]::before {
+  animation: pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.4; }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Sidebar scroll-spy nav lines
+   ───────────────────────────────────────────────────────────── */
+
+.spy-link {
+  display: flex; align-items: center; gap: 14px;
+  padding: 6px 0;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-tx-4);
+  text-align: left;
+  transition: color 0.18s ease;
+}
+.spy-link::before {
+  content: "";
+  width: 28px; height: 1px;
+  background: var(--color-tx-5);
+  transition: width 0.22s ease, background 0.22s ease;
+}
+.spy-link:hover { color: var(--color-tx-2); }
+.spy-link:hover::before { width: 56px; background: var(--color-tx-3); }
+.spy-link[data-active="true"] { color: var(--color-tx); }
+.spy-link[data-active="true"]::before { width: 56px; background: var(--color-tx); }
+.spy-link:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Print — full single-column CV layout.
+   Hides decoration, forces black-on-white, single column, URL hints.
+   ───────────────────────────────────────────────────────────── */
+
+@media print {
+  /* Hide decoration */
+  .cursor-aura, .grid-bg { display: none !important; }
+
+  /* Base */
+  html, body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+  * { transition: none !important; animation: none !important; }
+
+  /* Collapse 12-col grid to single column */
+  .lg\:grid { display: block !important; }
+  aside {
+    position: static !important;
+    height: auto !important;
+    padding: 0 0 16pt !important;
+    border-bottom: 0.5pt solid #ccc;
+    margin-bottom: 16pt;
+  }
+  main { padding: 0 !important; }
+
+  /* Hide scroll-spy nav, mobile menu, footer icon links */
+  nav[aria-label="Sections"],
+  button[aria-label="Open menu"],
+  button[aria-label="Close menu"] { display: none !important; }
+
+  /* Typography */
+  .h-name { font-size: 20pt !important; }
+  .lead   { font-size: 11pt !important; color: #333 !important; max-width: none !important; }
+  .eyebrow { color: #666 !important; }
+
+  /* Chips */
+  .tag, .pill {
+    border: 0.5pt solid #ccc !important;
+    background: transparent !important;
+    color: #444 !important;
+  }
+  .pill::before { background: #999 !important; box-shadow: none !important; }
+
+  /* Show href for external links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #888;
+    font-style: normal;
+  }
+  a[href^="mailto"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #888;
+  }
+
+  /* Page breaks */
+  section { break-inside: avoid; margin-bottom: 14pt; }
+  article { break-inside: avoid; }
+
+  /* Page setup */
+  @page { margin: 18mm 16mm; }
+}

@@ -1,0 +1,120 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DesignPrep architecture diagram">
+  <defs>
+    <linearGradient id="accentGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8b8df0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#5eead4" stop-opacity="0.65"/>
+    </linearGradient>
+    <linearGradient id="panelFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#171923"/>
+      <stop offset="100%" stop-color="#0e1015"/>
+    </linearGradient>
+    <linearGradient id="dataFill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#151827"/>
+      <stop offset="100%" stop-color="#101318"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="720" height="360" fill="#08090a"/>
+  <rect x="18" y="18" width="684" height="324" rx="18" fill="#0b0d10" stroke="#242735" stroke-width="1"/>
+
+  <text x="36" y="42" fill="#f4f5ff" font-family="sans-serif" font-size="17" font-weight="700">DesignPrep</text>
+  <text x="126" y="42" fill="#8b8df0" font-family="sans-serif" font-size="11" font-weight="600">Next.js 15 App Router · Supabase · Offline client flow · AI-assisted design ops</text>
+
+  <g filter="url(#softShadow)">
+    <rect x="36" y="72" width="158" height="214" rx="14" fill="url(#panelFill)" stroke="#33374a" stroke-width="1"/>
+    <rect x="48" y="86" width="134" height="28" rx="9" fill="#11131a" stroke="#8b8df0" stroke-opacity="0.75" stroke-width="1"/>
+    <text x="115" y="104" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">Designer Surface</text>
+    <rect x="52" y="130" width="118" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="111" y="145" fill="#dfe2ff" font-family="sans-serif" font-size="9.5" text-anchor="middle">Projects + org auth</text>
+    <rect x="52" y="160" width="118" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="111" y="175" fill="#dfe2ff" font-family="sans-serif" font-size="9.5" text-anchor="middle">Floorplan annotations</text>
+    <rect x="52" y="190" width="118" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="111" y="205" fill="#dfe2ff" font-family="sans-serif" font-size="9.5" text-anchor="middle">Decision graph authoring</text>
+    <rect x="52" y="220" width="118" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="111" y="235" fill="#dfe2ff" font-family="sans-serif" font-size="9.5" text-anchor="middle">BOQ + signed briefs</text>
+    <text x="111" y="267" fill="#9ca3c7" font-family="sans-serif" font-size="8.5" text-anchor="middle">server actions + route handlers</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="526" y="72" width="158" height="214" rx="14" fill="url(#panelFill)" stroke="#33374a" stroke-width="1"/>
+    <rect x="538" y="86" width="134" height="28" rx="9" fill="#11131a" stroke="#5eead4" stroke-opacity="0.75" stroke-width="1"/>
+    <text x="605" y="104" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700" text-anchor="middle">Client Surface</text>
+    <rect x="550" y="130" width="110" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="605" y="145" fill="#dffcf8" font-family="sans-serif" font-size="9.5" text-anchor="middle">8-char slug entry</text>
+    <rect x="550" y="160" width="110" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="605" y="175" fill="#dffcf8" font-family="sans-serif" font-size="9.5" text-anchor="middle">HttpOnly sessions</text>
+    <rect x="550" y="190" width="110" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="605" y="205" fill="#dffcf8" font-family="sans-serif" font-size="9.5" text-anchor="middle">IndexedDB graph cache</text>
+    <rect x="550" y="220" width="110" height="22" rx="7" fill="#0c0f14" stroke="#3a3f55" stroke-width="1"/>
+    <text x="605" y="235" fill="#dffcf8" font-family="sans-serif" font-size="9.5" text-anchor="middle">Replay queue sync</text>
+    <text x="605" y="276" fill="#9ca3c7" font-family="sans-serif" font-size="8.5" text-anchor="middle">works offline, reconciles later</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="242" y="70" width="236" height="118" rx="16" fill="#11131a" stroke="url(#accentGlow)" stroke-width="1.4"/>
+    <text x="360" y="98" fill="#ffffff" font-family="sans-serif" font-size="15" font-weight="700" text-anchor="middle">Next.js 15 App Router</text>
+    <text x="360" y="117" fill="#aeb3d8" font-family="sans-serif" font-size="9.5" text-anchor="middle">Server Components · Route Handlers · Middleware · PWA registration</text>
+    <rect x="260" y="136" width="82" height="30" rx="8" fill="#0b0d10" stroke="#30364a" stroke-width="1"/>
+    <text x="301" y="148" fill="#eef0ff" font-family="sans-serif" font-size="8.7" font-weight="700" text-anchor="middle">Auth Gates</text>
+    <text x="301" y="160" fill="#8f95bc" font-family="sans-serif" font-size="7.8" text-anchor="middle">dashboard + slug</text>
+    <rect x="360" y="136" width="100" height="30" rx="8" fill="#0b0d10" stroke="#30364a" stroke-width="1"/>
+    <text x="410" y="148" fill="#eef0ff" font-family="sans-serif" font-size="8.7" font-weight="700" text-anchor="middle">Sync API</text>
+    <text x="410" y="160" fill="#8f95bc" font-family="sans-serif" font-size="7.8" text-anchor="middle">responses + messages</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="242" y="212" width="236" height="98" rx="16" fill="#101318" stroke="#2d3346" stroke-width="1"/>
+    <text x="360" y="235" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700" text-anchor="middle">Domain Engines</text>
+    <rect x="258" y="250" width="92" height="38" rx="9" fill="#0b0d10" stroke="#8b8df0" stroke-opacity="0.65" stroke-width="1"/>
+    <text x="304" y="264" fill="#e9eaff" font-family="sans-serif" font-size="8.8" font-weight="700" text-anchor="middle">Deterministic BOQ</text>
+    <text x="304" y="277" fill="#aeb3d8" font-family="sans-serif" font-size="7.5" text-anchor="middle">room area + selections</text>
+    <rect x="370" y="250" width="92" height="38" rx="9" fill="#0b0d10" stroke="#5eead4" stroke-opacity="0.62" stroke-width="1"/>
+    <text x="416" y="264" fill="#e9fffc" font-family="sans-serif" font-size="8.8" font-weight="700" text-anchor="middle">Brief Export</text>
+    <text x="416" y="277" fill="#aeb3d8" font-family="sans-serif" font-size="7.5" text-anchor="middle">signed HTML snapshots</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="262" y="20" width="196" height="32" rx="12" fill="#10131b" stroke="#30364a" stroke-width="1"/>
+    <text x="360" y="40" fill="#dfe2ff" font-family="sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">129 RLS policies · 32 Postgres tables</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="248" y="318" width="224" height="24" rx="12" fill="#11131a" stroke="#383d52" stroke-width="1"/>
+    <text x="360" y="334" fill="#cfd3f4" font-family="sans-serif" font-size="9" text-anchor="middle">Gemini 2.0 Flash: chat · image analysis · extraction · storyboard copy</text>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <rect x="244" y="194" width="80" height="14" rx="7" fill="#8b8df0" fill-opacity="0.14" stroke="#8b8df0" stroke-opacity="0.5" stroke-width="1"/>
+    <text x="284" y="204" fill="#cdd0ff" font-family="sans-serif" font-size="7.5" text-anchor="middle">Server trust boundary</text>
+    <rect x="396" y="194" width="80" height="14" rx="7" fill="#5eead4" fill-opacity="0.12" stroke="#5eead4" stroke-opacity="0.5" stroke-width="1"/>
+    <text x="436" y="204" fill="#cafff8" font-family="sans-serif" font-size="7.5" text-anchor="middle">Offline edge state</text>
+  </g>
+
+  <g>
+    <rect x="40" y="306" width="156" height="18" rx="9" fill="#10131b" stroke="#30364a" stroke-width="1"/>
+    <text x="118" y="318" fill="#9ca3c7" font-family="sans-serif" font-size="8" text-anchor="middle">Supabase Storage: plans, uploads, exports</text>
+    <rect x="524" y="306" width="156" height="18" rx="9" fill="#10131b" stroke="#30364a" stroke-width="1"/>
+    <text x="602" y="318" fill="#9ca3c7" font-family="sans-serif" font-size="8" text-anchor="middle">Postgres: projects, rooms, nodes, BOQ</text>
+  </g>
+
+  <path d="M194 152 C214 152 220 116 242 116" fill="none" stroke="#8b8df0" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M478 116 C500 116 506 152 526 152" fill="none" stroke="#5eead4" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M194 226 C220 226 218 262 242 262" fill="none" stroke="#8b8df0" stroke-opacity="0.85" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M478 262 C502 262 500 226 526 226" fill="none" stroke="#5eead4" stroke-opacity="0.85" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M360 188 L360 212" fill="none" stroke="#6f75a7" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M360 310 L360 318" fill="none" stroke="#8b8df0" stroke-width="1.3" stroke-linecap="round"/>
+
+  <circle cx="242" cy="116" r="3" fill="#8b8df0"/>
+  <circle cx="478" cy="116" r="3" fill="#5eead4"/>
+  <circle cx="242" cy="262" r="3" fill="#8b8df0"/>
+  <circle cx="478" cy="262" r="3" fill="#5eead4"/>
+  <circle cx="360" cy="212" r="3" fill="#c7cbff"/>
+
+  <path d="M478 151 L488 146 L488 156 Z" fill="#5eead4"/>
+  <path d="M232 257 L242 262 L232 267 Z" fill="#8b8df0"/>
+  <path d="M526 226 L516 221 L516 231 Z" fill="#5eead4"/>
+  <path d="M242 116 L232 111 L232 121 Z" fill="#8b8df0"/>
+</svg>
