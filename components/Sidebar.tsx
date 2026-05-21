@@ -32,7 +32,7 @@ export function Sidebar({ sections, backLink }: Props) {
 
         <div className="mt-3 text-[19px] font-semibold text-tx-2">{profile.role}</div>
         {profile.cert && (
-          <div className="mt-2 text-[12px] font-mono tracking-wide text-tx-4">
+          <div className="mt-2 text-[12px] font-mono tracking-wide text-tx-3">
             {profile.cert}
           </div>
         )}

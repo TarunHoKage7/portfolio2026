@@ -38,7 +38,7 @@ export function ProjectRow({ project, maxStack }: Props) {
           {visible.map((t) => (
             <span key={t} className="tag">{t}</span>
           ))}
-          {overflow > 0 && <span className="tag text-tx-4">+{overflow}</span>}
+          {overflow > 0 && <span className="tag text-tx-3">+{overflow}</span>}
         </div>
       </div>
     </Link>

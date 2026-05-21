@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" width="720" height="430">
+  <defs>
+    <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10141d"/>
+      <stop offset="1" stop-color="#0b0e14"/>
+    </linearGradient>
+    <linearGradient id="kernelGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f131c"/>
+      <stop offset="1" stop-color="#0a0d12"/>
+    </linearGradient>
+    <radialGradient id="haloA" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b8df0" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#8b8df0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="haloB" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#79e5c5" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#79e5c5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <marker id="arrowAccent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b8df0"/>
+    </marker>
+    <marker id="arrowSafe" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#79e5c5"/>
+    </marker>
+    <marker id="arrowWarn" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#f0c96a"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="720" height="430" fill="#08090a"/>
+  <circle cx="620" cy="82" r="170" fill="url(#haloA)"/>
+  <circle cx="118" cy="366" r="150" fill="url(#haloB)"/>
+  <circle cx="642" cy="356" r="92" fill="url(#haloA)" opacity="0.45"/>
+
+  <g font-family="sans-serif">
+    <text x="28" y="34" fill="#eef2ff" font-size="24" font-weight="700">BountyBrain V3</text>
+    <text x="28" y="54" fill="#9aa4cc" font-size="11">Human-in-the-loop multi-agent OS built around replayable disk state, explicit approval, and zero-trust command flow.</text>
+    <rect x="398" y="20" width="92" height="22" rx="11" fill="#121728" stroke="#2c3350"/>
+    <rect x="500" y="20" width="90" height="22" rx="11" fill="#121728" stroke="#2c3350"/>
+    <rect x="600" y="20" width="92" height="22" rx="11" fill="#121728" stroke="#2c3350"/>
+    <text x="444" y="34" fill="#dfe3ff" font-size="9.5" text-anchor="middle" dominant-baseline="middle">human approves</text>
+    <text x="545" y="34" fill="#dfe3ff" font-size="9.5" text-anchor="middle" dominant-baseline="middle">disk is truth</text>
+    <text x="646" y="34" fill="#dfe3ff" font-size="9.5" text-anchor="middle" dominant-baseline="middle">sanitize twice</text>
+
+    <text x="28" y="84" fill="#6f789b" font-size="10" font-weight="700" letter-spacing="1.4">OUTSIDE THE KERNEL</text>
+
+    <rect x="246" y="92" width="448" height="314" rx="26" fill="url(#kernelGrad)" stroke="#8b8df0" stroke-opacity="0.35" stroke-width="1.2" filter="url(#shadow)"/>
+    <rect x="262" y="78" width="184" height="22" rx="11" fill="#121728" stroke="#2f3656"/>
+    <text x="354" y="89" fill="#dfe3ff" font-size="10" font-weight="700" text-anchor="middle" dominant-baseline="middle" letter-spacing="1.2">BOUNTYBRAIN V3 TRUST KERNEL</text>
+
+    <rect x="26" y="104" width="188" height="88" rx="18" fill="url(#panelGrad)" stroke="#8b8df0" stroke-width="1.2" stroke-dasharray="6 5" filter="url(#shadow)"/>
+    <rect x="38" y="118" width="3" height="24" rx="1.5" fill="#8b8df0"/>
+    <text x="48" y="126" fill="#eef2ff" font-size="13" font-weight="700">AI planners</text>
+    <text x="48" y="145" fill="#9aa4cc" font-size="10">Claude / GPT / Gemini / local Ollama</text>
+    <text x="48" y="162" fill="#9aa4cc" font-size="10">returns structured JSON proposals only</text>
+    <text x="48" y="179" fill="#9aa4cc" font-size="10">no shell, no disk, no execution authority</text>
+    <rect x="132" y="116" width="68" height="18" rx="9" fill="#14192a" stroke="#353d62"/>
+    <text x="166" y="125" fill="#cfd5ff" font-size="8.7" text-anchor="middle" dominant-baseline="middle">0 shell access</text>
+
+    <rect x="26" y="208" width="188" height="98" rx="18" fill="url(#panelGrad)" stroke="#2b3348" filter="url(#shadow)"/>
+    <rect x="38" y="222" width="3" height="24" rx="1.5" fill="#79e5c5"/>
+    <text x="48" y="230" fill="#eef2ff" font-size="13" font-weight="700">Human operator</text>
+    <text x="48" y="249" fill="#9aa4cc" font-size="10">approves commands after review</text>
+    <text x="48" y="266" fill="#9aa4cc" font-size="10">runs curl / scripts outside the app</text>
+    <text x="48" y="283" fill="#9aa4cc" font-size="10">pastes terminal output back into BountyBrain</text>
+    <rect x="48" y="290" width="92" height="18" rx="9" fill="#10211d" stroke="#2f5b51"/>
+    <text x="94" y="299" fill="#b8f4e5" font-size="8.8" text-anchor="middle" dominant-baseline="middle">the only executor</text>
+
+    <rect x="26" y="322" width="188" height="60" rx="18" fill="url(#panelGrad)" stroke="#2b3348" filter="url(#shadow)"/>
+    <rect x="38" y="336" width="3" height="20" rx="1.5" fill="#f0c96a"/>
+    <text x="48" y="344" fill="#eef2ff" font-size="13" font-weight="700">Scout / ingest lane</text>
+    <text x="48" y="362" fill="#9aa4cc" font-size="10">watchfiles reacts to recon output instantly</text>
+    <text x="48" y="377" fill="#9aa4cc" font-size="10">Nuclei JSONL is tailed line-by-line</text>
+
+    <rect x="266" y="108" width="180" height="148" rx="18" fill="url(#panelGrad)" stroke="#2b3348" filter="url(#shadow)"/>
+    <rect x="278" y="122" width="3" height="24" rx="1.5" fill="#8b8df0"/>
+    <text x="288" y="130" fill="#eef2ff" font-size="13" font-weight="700">FastAPI + Socket.IO</text>
+    <text x="288" y="147" fill="#9aa4cc" font-size="9.8">approval queue, rooms, watchers, background tasks</text>
+    <rect x="278" y="160" width="156" height="22" rx="11" fill="#151928" stroke="#3b425e"/>
+    <text x="356" y="171" fill="#e7e9ff" font-size="8.9" text-anchor="middle" dominant-baseline="middle">Sanitizer on disk-write + Socket.IO emit</text>
+    <rect x="278" y="188" width="156" height="22" rx="11" fill="#151928" stroke="#3b425e"/>
+    <text x="356" y="199" fill="#e7e9ff" font-size="8.9" text-anchor="middle" dominant-baseline="middle">Scope gate at prompt-time + approval</text>
+    <rect x="278" y="216" width="156" height="22" rx="11" fill="#151928" stroke="#3b425e"/>
+    <text x="356" y="227" fill="#e7e9ff" font-size="8.9" text-anchor="middle" dominant-baseline="middle">429 =&gt; 15m | 5x403 =&gt; 10m cooldown</text>
+    <text x="288" y="247" fill="#9aa4cc" font-size="9.6">AppState is cache only; startup rebuilds from disk</text>
+
+    <rect x="462" y="108" width="212" height="148" rx="18" fill="url(#panelGrad)" stroke="#2b3348" filter="url(#shadow)"/>
+    <rect x="474" y="122" width="3" height="24" rx="1.5" fill="#8b8df0"/>
+    <text x="484" y="130" fill="#eef2ff" font-size="13" font-weight="700">Canonical disk state</text>
+    <rect x="484" y="137" width="92" height="18" rx="9" fill="#10211d" stroke="#2f5b51"/>
+    <text x="530" y="146" fill="#b8f4e5" font-size="8.8" text-anchor="middle" dominant-baseline="middle">TARGET_CONFIG.json</text>
+
+    <path d="M484 164 h56 l14 14 v44 h-70 z" fill="#14192a" stroke="#38405f"/>
+    <path d="M540 164 v14 h14" fill="none" stroke="#38405f"/>
+    <text x="519" y="184" fill="#eef2ff" font-size="10.3" font-weight="700" text-anchor="middle">ISSUE.md</text>
+    <text x="519" y="199" fill="#9aa4cc" font-size="8.8" text-anchor="middle">human / AI context</text>
+
+    <path d="M570 164 h68 l14 14 v44 h-82 z" fill="#14192a" stroke="#38405f"/>
+    <path d="M638 164 v14 h14" fill="none" stroke="#38405f"/>
+    <text x="611" y="184" fill="#eef2ff" font-size="10.3" font-weight="700" text-anchor="middle">ISSUE.json</text>
+    <text x="611" y="199" fill="#9aa4cc" font-size="8.8" text-anchor="middle">machine sidecar</text>
+
+    <rect x="484" y="214" width="168" height="18" rx="9" fill="#171a2f" stroke="#484f7e"/>
+    <text x="568" y="223" fill="#dfe3ff" font-size="8.8" text-anchor="middle" dominant-baseline="middle">JSON sidecar = sole executable truth</text>
+    <text x="484" y="241" fill="#9aa4cc" font-size="9.6">atomic dual-write via tempfile -&gt; os.replace</text>
+    <text x="484" y="253" fill="#9aa4cc" font-size="9.6">ghost-command guard: markdown body never executes</text>
+
+    <rect x="266" y="272" width="180" height="116" rx="18" fill="url(#panelGrad)" stroke="#2b3348" filter="url(#shadow)"/>
+    <rect x="278" y="286" width="3" height="24" rx="1.5" fill="#8b8df0"/>
+    <text x="288" y="294" fill="#eef2ff" font-size="13" font-weight="700">War room dashboard</text>
+    <line x1="294" y1="326" x2="318" y2="312" stroke="#8b8df0" stroke-width="1.4"/>
+    <line x1="318" y1="312" x2="336" y2="332" stroke="#8b8df0" stroke-width="1.4"/>
+    <line x1="318" y1="312" x2="352" y2="318" stroke="#8b8df0" stroke-width="1.4"/>
+    <circle cx="294" cy="326" r="4" fill="#8b8df0"/>
+    <circle cx="318" cy="312" r="4" fill="#79e5c5"/>
+    <circle cx="336" cy="332" r="4" fill="#f0c96a"/>
+    <circle cx="352" cy="318" r="4" fill="#8b8df0"/>
+    <line x1="374" y1="316" x2="426" y2="316" stroke="#39415f" stroke-width="2"/>
+    <line x1="374" y1="326" x2="418" y2="326" stroke="#39415f" stroke-width="2"/>
+    <line x1="374" y1="336" x2="409" y2="336" stroke="#39415f" stroke-width="2"/>
+    <text x="288" y="354" fill="#9aa4cc" font-size="9.8">D3 force graph + approval queue</text>
+    <text x="288" y="369" fill="#9aa4cc" font-size="9.8">full_state / issue_update over Socket.IO</text>
+    <text x="288" y="382" fill="#9aa4cc" font-size="9.8">throttled emit batches protect live sessions</text>
+
+    <rect x="462" y="272" width="212" height="116" rx="18" fill="url(#panelGrad)" stroke="#2b3348" filter="url(#shadow)"/>
+    <rect x="474" y="286" width="3" height="24" rx="1.5" fill="#f0c96a"/>
+    <text x="484" y="294" fill="#eef2ff" font-size="13" font-weight="700">Minimal durable exception</text>
+    <ellipse cx="495" cy="326" rx="16" ry="6" fill="#171a2f" stroke="#48506f"/>
+    <path d="M479 326 v24 c0 3 7 6 16 6 c9 0 16 -3 16 -6 v-24" fill="#14192a" stroke="#48506f"/>
+    <ellipse cx="495" cy="350" rx="16" ry="6" fill="#14192a" stroke="#48506f"/>
+    <text x="522" y="323" fill="#9aa4cc" font-size="9.8">SQLite WAL holds only velocity + request_log</text>
+    <text x="522" y="339" fill="#9aa4cc" font-size="9.8">circuit counters, cooldown timers, manual reset log</text>
+    <rect x="522" y="353" width="118" height="18" rx="9" fill="#241713" stroke="#6a483e"/>
+    <text x="581" y="362" fill="#ffd6cb" font-size="8.8" text-anchor="middle" dominant-baseline="middle">No Redis. No Postgres.</text>
+
+    <path d="M462 124 C 384 66, 302 66, 214 124" fill="none" stroke="#9aa4cc" stroke-opacity="0.8" stroke-width="1.4" stroke-dasharray="5 5" marker-end="url(#arrowAccent)"/>
+    <text x="338" y="78" fill="#b7bee0" font-size="9.3" text-anchor="middle">portable markdown issue handoff</text>
+
+    <line x1="214" y1="152" x2="266" y2="152" stroke="#8b8df0" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrowAccent)"/>
+    <text x="240" y="141" fill="#cfd5ff" font-size="9.1" text-anchor="middle">structured JSON</text>
+    <text x="240" y="165" fill="#7d86ab" font-size="8.6" text-anchor="middle">proposal lane</text>
+
+    <line x1="430" y1="176" x2="478" y2="176" stroke="#8b8df0" stroke-width="1.5" marker-end="url(#arrowAccent)"/>
+    <text x="454" y="166" fill="#cfd5ff" font-size="8.7" text-anchor="middle">write_issue()</text>
+    <text x="454" y="187" fill="#f0c96a" font-size="8.2" text-anchor="middle">sanitize @ write</text>
+
+    <line x1="478" y1="208" x2="430" y2="208" stroke="#9aa4cc" stroke-width="1.4" marker-end="url(#arrowWarn)"/>
+    <text x="454" y="220" fill="#b7bee0" font-size="8.4" text-anchor="middle">markdown_to_issue() / rebuild_from_disk()</text>
+
+    <line x1="356" y1="256" x2="356" y2="272" stroke="#f0c96a" stroke-width="1.5" marker-end="url(#arrowWarn)"/>
+    <text x="366" y="266" fill="#f0c96a" font-size="8.2">sanitize() before emit</text>
+
+    <line x1="266" y1="303" x2="214" y2="271" stroke="#8b8df0" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arrowAccent)"/>
+    <text x="224" y="289" fill="#cfd5ff" font-size="8.8">approve -&gt; copy -&gt; run outside app</text>
+
+    <line x1="214" y1="252" x2="266" y2="234" stroke="#79e5c5" stroke-width="1.7" marker-end="url(#arrowSafe)"/>
+    <text x="223" y="241" fill="#b8f4e5" font-size="8.8">paste output back</text>
+    <rect x="228" y="248" width="96" height="16" rx="8" fill="#10211d" stroke="#2f5b51"/>
+    <text x="276" y="256" fill="#b8f4e5" font-size="8.1" text-anchor="middle" dominant-baseline="middle">sanitize_command_output()</text>
+
+    <line x1="214" y1="349" x2="266" y2="242" stroke="#9aa4cc" stroke-width="1.4" marker-end="url(#arrowWarn)"/>
+    <text x="218" y="334" fill="#b7bee0" font-size="8.6">watchfiles / streamed findings</text>
+
+    <rect x="248" y="386" width="444" height="16" rx="8" fill="#0d1118" stroke="#1d2230"/>
+    <text x="470" y="394" fill="#7f89ae" font-size="8.6" text-anchor="middle" dominant-baseline="middle">Trust model: AI can reason, humans can execute, disk can recover, guards sit on every state boundary.</text>
+  </g>
+</svg>

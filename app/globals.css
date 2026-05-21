@@ -47,7 +47,10 @@
    Reset + base
    ───────────────────────────────────────────────────────────── */
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* NOTE: box-sizing / margin / padding reset is handled by Tailwind v4's
+   @layer base preflight. Duplicating it outside a layer would make it
+   unlayered — which in the CSS Cascade wins over @layer utilities and
+   silently nukes every py-*, px-*, mt-*, mx-auto utility. */
 
 html { scroll-behavior: smooth; }
 
@@ -237,7 +240,7 @@ h1, h2, h3 { letter-spacing: -0.02em; }
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-tx-4);
+  color: var(--color-tx-3);
   text-align: left;
   transition: color 0.18s ease;
 }

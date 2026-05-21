@@ -21,7 +21,7 @@ export default function Home() {
     <>
     <MobileNavMenu sections={SECTIONS} />
     <PageShell sidebar={<Sidebar sections={SECTIONS} />} sidebarSpan={5}>
-      <div className="space-y-32">
+      <div className="space-y-20">
         <section id="about" aria-label="About">
           <p className="lead">
             I&apos;m an engineer who builds <strong>product-grade systems</strong> end-to-end on AWS —

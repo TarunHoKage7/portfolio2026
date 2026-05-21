@@ -42,7 +42,7 @@ export function ProjectCard({ project }: Props) {
             <span key={t} className="tag">{t}</span>
           ))}
           {overflow > 0 && (
-            <span className="tag text-tx-4">+{overflow}</span>
+            <span className="tag text-tx-3">+{overflow}</span>
           )}
         </div>
         <span className="shrink-0 text-[14px] text-tx-4 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
