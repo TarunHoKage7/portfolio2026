@@ -145,7 +145,6 @@ h1, h2, h3 { letter-spacing: -0.02em; }
   font-size: 17px;
   line-height: 1.7;
   color: var(--color-tx-2);
-  max-width: 58ch;
   text-wrap: pretty;
 }
 .lead + .lead { margin-top: 24px; }
@@ -296,7 +295,7 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 
   /* Typography */
   .h-name { font-size: 20pt !important; }
-  .lead   { font-size: 11pt !important; color: #333 !important; max-width: none !important; }
+  .lead   { font-size: 11pt !important; color: #333 !important; }
   .eyebrow { color: #666 !important; }
 
   /* Chips */
