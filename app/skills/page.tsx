@@ -3,11 +3,13 @@ import { PageShell } from "@/components/PageShell";
 import { Sidebar } from "@/components/Sidebar";
 import { SkillCluster } from "@/components/SkillCluster";
 import { clusters } from "@/lib/skills";
-import { profile } from "@/lib/data";
-
 export const metadata: Metadata = {
-  title: `Skills — ${profile.name}`,
+  title: "Skills",
   description: "What I reach for, grouped by domain rather than a flat tag list.",
+  openGraph: {
+    title: "Skills",
+    url: "/skills",
+  },
 };
 
 const WIDE_CLUSTER_ID = "ai";

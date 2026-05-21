@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { ProjectRow } from "@/components/ProjectRow";
 import { Sidebar } from "@/components/Sidebar";
-import { featured, profile } from "@/lib/data";
+import { featured } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: `Projects — ${profile.name}`,
+  title: "Projects",
+  openGraph: {
+    title: "Projects",
+    url: "/projects",
+  },
 };
 
 export default function ProjectsPage() {

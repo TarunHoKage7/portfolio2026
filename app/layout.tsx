@@ -27,7 +27,7 @@ const geistMono = localFont({
   ],
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://tarun.dev";
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://saikalyantarun2026.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),

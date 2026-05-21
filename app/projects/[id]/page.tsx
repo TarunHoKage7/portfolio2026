@@ -22,8 +22,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const project = getProjectById(id);
   return {
-    title: project ? `${project.name} — ${profile.name}` : "Project",
+    title: project ? project.name : "Project",
     description: project?.blurb,
+    openGraph: {
+      title: project ? project.name : "Project",
+      description: project?.blurb,
+      url: `/projects/${id}`,
+    },
   };
 }
 
@@ -63,6 +68,7 @@ export default async function ProjectDetail({ params }: PageProps) {
 
         {/* ── Architecture slot ────────────────────────────────── */}
         <section aria-label="Architecture">
+          <div className="eyebrow mb-5">Architecture</div>
           <ArchDiagramSlot
             caption={project.archCaption}
             stack={project.stack}

@@ -7,15 +7,20 @@ interface Props {
 export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
   if (diagramSrc) {
     return (
-      <div className="rounded-xl overflow-hidden border border-line-strong">
-        <img
-          src={diagramSrc}
-          alt="Architecture diagram"
-          className="w-full h-auto block"
-          loading="lazy"
-        />
+      <div className="rounded-xl border border-line-strong overflow-hidden bg-[#08090a]">
+        {/* Horizontal scroll on narrow viewports so SVG text stays legible */}
+        <div className="overflow-x-auto">
+          <div className="min-w-[680px]">
+            <img
+              src={diagramSrc}
+              alt="Architecture diagram"
+              className="w-full h-auto block"
+              loading="lazy"
+            />
+          </div>
+        </div>
         {caption && (
-          <p className="px-5 py-3 text-tx-3 text-[12.5px] leading-relaxed border-t border-line bg-bg-panel/60">
+          <p className="px-5 py-3 text-tx-3 text-[12.5px] leading-relaxed border-t border-line">
             {caption}
           </p>
         )}
@@ -25,7 +30,7 @@ export function ArchDiagramSlot({ caption, stack, diagramSrc }: Props) {
 
   return (
     <div className="relative overflow-hidden rounded-xl border border-dashed border-line-strong bg-bg-panel/40 p-8">
-      {/* Subtle grid background — echoes the page bg-grid at a tighter cell size */}
+      {/* Subtle grid background */}
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
